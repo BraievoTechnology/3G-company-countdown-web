@@ -157,9 +157,9 @@ const AboutPreview = () => {
             duration: 0.5,
             delay: 0.6
           }}>
-              <Button to="/about" variant="secondary">
+       {/*       <Button to="/about" variant="secondary">
                 Discover Our Story
-              </Button>
+              </Button>*/}
             </motion.div>
           </motion.div>
           <div className="grid grid-cols-2 gap-4">

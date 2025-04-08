@@ -61,11 +61,11 @@ const Header = () => {
     label: 'Events',
     sectionId: 'events',
     path: '/events'
-  }, {
+  }, /*{
     label: 'Careers',
     sectionId: 'careers',
     path: '/careers'
-  }, {
+  },*/ {
     label: 'Contact',
     sectionId: 'contact',
     path: '/contact'
@@ -76,11 +76,11 @@ const Header = () => {
           <div className="flex items-center space-x-4 mb-2 md:mb-0">
             <div className="flex items-center">
               <PhoneIcon size={16} className="mr-2" />
-              <span className="text-sm">+1 (555) 234-5678</span>
+              <span className="text-sm">(+94) 11 592 5015 / 16</span>
             </div>
             <div className="flex items-center">
               <MailIcon size={16} className="mr-2" />
-              <span className="text-sm">info@3gconsultants.com</span>
+              <span className="text-sm">info@3gconsultants.lk</span>
             </div>
           </div>
           <div className="flex items-center">

@@ -21,13 +21,13 @@ const HomePage = () => {
         <FeaturedProjects />
       </div>
       <div id="news">
-        <NewsPreviewSection />
+      {/*  <NewsPreviewSection />*/}
       </div>
       <div id="events">
-        <EventsPreviewSection />
+       {/* <EventsPreviewSection />*/}
       </div>
       <div id="testimonials">
-        <TestimonialsSection />
+        {/*<TestimonialsSection />*/}
       </div>
       <div id="contact">
         <CtaSection />

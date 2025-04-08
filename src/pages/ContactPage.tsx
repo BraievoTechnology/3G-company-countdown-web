@@ -64,11 +64,11 @@ const ContactPage = () => {
                       Our Location
                     </h3>
                     <p className="text-gray-600">
-                      123 Construction Way
+                      9/B Jeswell Pl,
                       <br />
-                      Building City, BC 12345
+                      Nugegoda 10107
                       <br />
-                      United States
+                      Sri Lanka
                     </p>
                   </div>
                 </div>
@@ -81,9 +81,10 @@ const ContactPage = () => {
                       Phone
                     </h3>
                     <p className="text-gray-600">
-                      Main: +1 (123) 456-7890
+                      Office     : (+94) 11 592 5015 / 16
+
                       <br />
-                      Support: +1 (123) 456-7891
+                      Mobile   :  (+94) 77 367 0101 / (+94) 77 613 6484
                     </p>
                   </div>
                 </div>
@@ -96,9 +97,9 @@ const ContactPage = () => {
                       Email
                     </h3>
                     <p className="text-gray-600">
-                      info@buildconstruct.com
+                      info@3gconsultants.lk
                       <br />
-                      support@buildconstruct.com
+
                     </p>
                   </div>
                 </div>
