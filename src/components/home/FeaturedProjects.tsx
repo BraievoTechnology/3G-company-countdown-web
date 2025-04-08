@@ -223,9 +223,9 @@ const FeaturedProjects = () => {
             ))}
           </div>
           <div className="mt-12 text-center">
-            <Button to="/projects" variant="secondary">
+      {/*      <Button to="/projects" variant="secondary">
               View All Projects
-            </Button>
+            </Button>*/}
           </div>
         </div>
       </section>
