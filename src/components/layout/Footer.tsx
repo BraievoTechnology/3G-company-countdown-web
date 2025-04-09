@@ -272,9 +272,9 @@ const Footer = () => {
                                     className="mr-3 mt-1 flex-shrink-0 text-yellow-500"
                                 />
                                 <span>
-                  456 Engineering Plaza, Suite 300
+                  19/B Jeswell Pl
                   <br />
-                  Innovation District, ID 54321
+                   Nugegoda 10107 , Sri Lanka
                 </span>
                             </motion.li>
                             <motion.li
@@ -287,7 +287,7 @@ const Footer = () => {
                                     size={20}
                                     className="mr-3 flex-shrink-0 text-yellow-500"
                                 />
-                                <span>+1 (555) 234-5678</span>
+                                <span>0115 925 015</span>
                             </motion.li>
                             <motion.li
                                 whileHover={{
@@ -299,7 +299,7 @@ const Footer = () => {
                                     size={20}
                                     className="mr-3 flex-shrink-0 text-yellow-500"
                                 />
-                                <span>info@3gconsultants.com</span>
+                                <span>info@3gconsultants.lk</span>
                             </motion.li>
                         </ul>
                     </motion.div>
