@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRightIcon } from 'lucide-react'
 import SectionTitle from '../ui/SectionTitle'
-import Button from '../ui/Button'
+
 const projects = [
   {
     id: 1,
@@ -44,7 +44,7 @@ const projects = [
             'BUILDING FOR BANK OF CEYLON CITY BRANCH AT TRINCOMALEE',
       },
       {
-        title: 'CCP',
+        title: 'CEYLON COLLEGE OF PHYSICIANS BUILDING',
         category: 'Commercial Building',
         description:
             'RENOVATION OF CEYLON COLLEGE OF PHYSICIANS BUILDING',
