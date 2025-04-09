@@ -28,9 +28,9 @@ const projects = [
       },
     ],
     images: [
-      "/src/assets/images/Horana2.jpg",
-      "/src/assets/images/Armith.jpg",
-      "/src/assets/images/BOCKandy.jpg",
+      "/public/Horana2.jpg",
+      "/public/Armith.jpg",
+      "/public/BOCKandy.jpg",
     ],
     link: "/projects/parkview-plaza",
   },
@@ -54,9 +54,9 @@ const projects = [
       },
     ],
     images: [
-      "/src/assets/images/BOCTrinco.jpg",
-      "/src/assets/images/ccp.jpg",
-      "/src/assets/images/ColomboUrbanRegeneration.jpg",
+      "/public/BOCTrinco.jpg",
+      "/public/ccp.jpg",
+      "/public/ColomboUrbanRegeneration.jpg",
     ],
     link: "/projects/riverside-bridge",
   },
@@ -81,9 +81,9 @@ const projects = [
       },
     ],
     images: [
-      "/src/assets/images/Fuel.jpg",
-      "/src/assets/images/Sanjeewa.jpg",
-      "/src/assets/images/galle-udugama.jpg",
+      "/public/Fuel.jpg",
+      "/public/Sanjeewa.jpg",
+      "/public/galle-udugama.jpg",
     ],
     link: "/projects/green-valley-residences",
   },
@@ -185,7 +185,7 @@ const ProjectCard = ({ project }: { project: (typeof projects)[0] }) => {
                 {content.description}
               </motion.p>
               <motion.div className="flex items-center font-semibold text-yellow-400 group/link">
-         {/*       <Link
+                <Link
                     to={project.link}
                     className="flex items-center hover:text-yellow-300"
                 >
@@ -194,7 +194,7 @@ const ProjectCard = ({ project }: { project: (typeof projects)[0] }) => {
                       size={20}
                       className="ml-2 transition-transform duration-300 transform group-hover/link:translate-x-1"
                   />
-                </Link>*/}
+                </Link>
               </motion.div>
             </motion.div>
           </AnimatePresence>
@@ -217,9 +217,9 @@ const FeaturedProjects = () => {
             ))}
           </div>
           <div className="mt-12 text-center">
-{/*            <Button to="/projects" variant="secondary">
+            <Button to="/projects" variant="secondary">
               View All Projects
-            </Button>*/}
+            </Button>
           </div>
         </div>
       </section>
