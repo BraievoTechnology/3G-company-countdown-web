@@ -50,9 +50,9 @@ const HeroSection = () => {
             }} whileTap={{
               scale: 0.95
             }}>
-                <Button to="/projects" variant="primary">
+  {/*              <Button to="/projects" variant="primary">
                   Our Projects
-                </Button>
+                </Button>*/}
               </motion.div>
               <motion.div whileHover={{
               scale: 1.05

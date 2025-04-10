@@ -137,7 +137,7 @@ const Footer = () => {
                                     href: 'https://www.facebook.com/3gconsultantslk/',
                                     label: 'Facebook',
                                 },
-                                {
+                     /*           {
                                     Icon: TwitterIcon,
                                     href: '#',
                                     label: 'Twitter',
@@ -146,7 +146,7 @@ const Footer = () => {
                                     Icon: InstagramIcon,
                                     href: '#',
                                     label: 'Instagram',
-                                },
+                                },*/
                                 {
                                     Icon: LinkedinIcon,
                                     href: 'https://www.linkedin.com/company/3g-consultants-pvt-ltd/?originalSubdomain=lk',
@@ -185,7 +185,8 @@ const Footer = () => {
                             Quick Links
                         </h3>
                         <ul className="space-y-3">
-                            {['Home', 'About Us', 'Services', 'Projects', 'Contact'].map(
+                            {/*['Home', 'About Us', 'Services', 'Projects', 'Contact']*/}
+                            {['Home',  'Contact'].map(
                                 (item, index) => (
                                     <motion.li
                                         key={index}
@@ -205,7 +206,7 @@ const Footer = () => {
                             )}
                         </ul>
                     </motion.div>
-                    <motion.div
+                    {/*<motion.div
                         variants={fadeInUpVariants}
                         initial="initial"
                         whileInView="animate"
@@ -244,7 +245,7 @@ const Footer = () => {
                                 </motion.li>
                             ))}
                         </ul>
-                    </motion.div>
+                    </motion.div>*/}
                     <motion.div
                         variants={fadeInUpVariants}
                         initial="initial"

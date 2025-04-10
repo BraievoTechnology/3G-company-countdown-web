@@ -98,9 +98,10 @@ const ContactPage = () => {
                         Phone
                       </h3>
                       <p className="text-gray-600">
-                        Main: +1 (123) 456-7890
+                        Support: (+94) 11 592 5015 / 16
+                    {/*    Main: 0115 925 015*/}
                         <br />
-                        Support: +1 (123) 456-7891
+
                       </p>
                     </div>
                   </div>
@@ -113,9 +114,10 @@ const ContactPage = () => {
                         Email
                       </h3>
                       <p className="text-gray-600">
-                        info@buildconstruct.com
-                        <br />
-                        support@buildconstruct.com
+                        info@3gconsultants.lk
+
+
+
                       </p>
                     </div>
                   </div>
@@ -130,7 +132,7 @@ const ContactPage = () => {
                       <p className="text-gray-600">
                         Monday - Friday: 8:00AM - 6:00PM
                         <br />
-                        Saturday: 9:00AM - 1:00PM
+                        Saturday: 8:00AM - 1:00PM
                         <br />
                         Sunday: Closed
                       </p>
