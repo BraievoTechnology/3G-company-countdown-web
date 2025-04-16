@@ -71,11 +71,11 @@ const Header = () => {
       sectionId: 'events',
       path: '/events',
     },
-    {
+/*    {
       label: 'Careers',
       sectionId: 'careers',
       path: '/careers',
-    },
+    },*/
     {
       label: 'Contact',
       sectionId: 'contact',
