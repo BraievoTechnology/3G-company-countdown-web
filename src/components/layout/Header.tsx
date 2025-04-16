@@ -21,23 +21,24 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-  const handleNavClick = (sectionId: string, path: string) => {
-    setIsMenuOpen(false)
-    if (path === '/careers') {
-      navigate(path)
-    } else if (hasScrolled && sectionId) {
-      const element = document.getElementById(sectionId)
-      if (element) {
-        element.scrollIntoView({
-          behavior: 'smooth',
-        })
-      }
-    } else if (path !== location.pathname) {
-      navigate(path, {
-        state: {
-          scrollTo: sectionId,
-        },
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
       })
+    }
+  }
+  const handleNavClick = async (sectionId: string, path: string) => {
+    setIsMenuOpen(false)
+    if (location.pathname !== '/') {
+      await navigate('/')
+      setTimeout(() => {
+        scrollToSection(sectionId)
+      }, 100)
+    } else {
+      scrollToSection(sectionId)
     }
   }
   const navItems = [
@@ -70,8 +71,8 @@ const Header = () => {
       label: 'Events',
       sectionId: 'events',
       path: '/events',
-    },*/
-/*    {
+    },
+    {
       label: 'Careers',
       sectionId: 'careers',
       path: '/careers',
