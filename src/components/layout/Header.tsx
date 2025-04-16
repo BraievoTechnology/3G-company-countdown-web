@@ -199,7 +199,7 @@ const Header = () => {
                   }}
               >
                 <Link to="/" className="text-2xl font-bold text-blue-900">
-                  3gConsultants
+                  3G Consultants
                 </Link>
               </motion.div>
               <nav className="hidden md:flex space-x-8">
