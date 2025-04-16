@@ -9,85 +9,85 @@ const projects = [
     id: 1,
     contents: [
       {
-        title: "Ace Healthcare Derma",
-        category: "Commercial Building",
+        title: 'Ace Healthcare Derma',
+        category: 'Commercial Building',
         description:
-            "Cosmetic and Derma Formulation Plant for Ace Healthcare (Pvt) Ltd, Horana",
+            'Cosmetic and Derma Formulation Plant for Ace Healthcare (Pvt) Ltd, Horana',
       },
       {
-        title: "Amrith",
-        category: "Residential Building",
+        title: 'Amrith',
+        category: 'Residential Building',
         description:
-            "Residence for Amrith De Soysa and Shihani De Soysa at Park Road, Colombo",
+            'Residence for Amrith De Soysa and Shihani De Soysa at Park Road, Colombo',
       },
       {
-        title: "Bank of Ceylon Kandy",
-        category: "Commercial Building",
+        title: 'Bank of Ceylon Kandy',
+        category: 'Commercial Building',
         description:
-            "Rennovation / Modification of Bank of Ceylon Holiday Home at Kandy",
+            'Rennovation / Modification of Bank of Ceylon Holiday Home at Kandy',
       },
     ],
     images: [
-      "/public/Horana2.jpg",
-      "/public/Armith.jpg",
-      "/public/BOCKandy.jpg",
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/vUjkmq8jroYBp7wderSLkK/AceHealthcareDerma.jpg',
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/aTUVhALqL7kGeTCLbC92CV/Amrith3.jpg',
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/2vkpGRhamnc2b1C1dW7xt4/BOCKandy10.jpg',
     ],
-    link: "/projects/parkview-plaza",
+    link: '/projects/parkview-plaza',
   },
   {
     id: 2,
     contents: [
       {
-        title: "Bank of Ceylon Trinco",
-        category: "Commercial Building",
-        description: "Building for Bank of Ceylon City Branch at Trincomalee",
+        title: 'Bank of Ceylon Trinco',
+        category: 'Commercial Building',
+        description: 'Building for Bank of Ceylon City Branch at Trincomalee',
       },
       {
-        title: "Renovation of Ceylon College",
-        category: "Commercial Building",
-        description: "Renovation of Ceylon College of Physicians building",
+        title: 'Renovation of Ceylon College',
+        category: 'Commercial Building',
+        description: 'Renovation of Ceylon College of Physicians building',
       },
       {
-        title: "Colombo Urban Regeneration",
-        category: "Urban Ruler and Regional Development",
-        description: "Colombo Urban Regeneration Project, Sri Lanka",
+        title: 'Colombo Urban Regeneration',
+        category: 'Urban Ruler and Regional Development',
+        description: 'Colombo Urban Regeneration Project, Sri Lanka',
       },
     ],
     images: [
-      "/public/BOCTrinco.jpg",
-      "/public/ccp.jpg",
-      "/public/ColomboUrbanRegeneration.jpg",
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/2QNFtGL86zMtM3TMkDcZ1p/BOCTrinco.jpg',
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/d149ikBw6vjt911SLX8dZn/ccp.jpg',
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/sSyHRK27oJNo9YuWnGnrrH/ColomboUrbanRegeneration.jpg',
     ],
-    link: "/projects/riverside-bridge",
+    link: '/projects/riverside-bridge',
   },
   {
     id: 3,
     contents: [
       {
-        title: "Ceypetco Fuel Station",
-        category: "Urban Ruler and Regional Development.",
+        title: 'Ceypetco Fuel Station',
+        category: 'Urban Ruler and Regional Development.',
         description:
-            "Fuel Station for Sri Lanka Transport Board at Baseline Road, Orugodawatta",
+            'Fuel Station for Sri Lanka Transport Board at Baseline Road, Orugodawatta',
       },
       {
-        title: "Dr. Sanjeewa",
-        category: "Residential Building",
-        description: "Residence for DR.Ranil Sanjeewa and DR.Gayathri Kanchana",
+        title: 'Dr. Sanjeewa',
+        category: 'Residential Building',
+        description: 'Residence for DR.Ranil Sanjeewa and DR.Gayathri Kanchana',
       },
       {
-        title: "Widening and Improvements",
-        category: "Road & Infastructure",
-        description: "Widening and Improvements to Galle-Udugama road",
+        title: 'Widening and Improvements',
+        category: 'Road & Infastructure',
+        description: 'Widening and Improvements to Galle-Udugama road',
       },
     ],
     images: [
-      "/public/Fuel.jpg",
-      "/public/Sanjeewa.jpg",
-      "/public/galle-udugama.jpg",
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/qg8dtPGCSeG86cYW9feaLH/CTBFuel.jpg',
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/ev1Sb6gthoYWdiKMD5Ypsx/Sanjeewa.jpg',
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/ccRTtJBq7zyrNu4g2J9NwL/GalleUdugama2.jpg',
     ],
-    link: "/projects/green-valley-residences",
+    link: '/projects/green-valley-residences',
   },
-];
+]
 const ProjectCard = ({ project }: { project: (typeof projects)[0] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   useEffect(() => {
