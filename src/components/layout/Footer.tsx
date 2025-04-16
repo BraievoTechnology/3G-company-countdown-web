@@ -288,7 +288,7 @@ const Footer = () => {
                                     size={20}
                                     className="mr-3 flex-shrink-0 text-yellow-500"
                                 />
-                                <span>0115 925 015</span>
+                                <span>011 283 5074</span>
                             </motion.li>
                             <motion.li
                                 whileHover={{
