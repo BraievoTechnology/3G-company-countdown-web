@@ -61,7 +61,7 @@ const Header = () => {
       sectionId: 'projects',
       path: '/projects',
     },
-    {
+/*    {
       label: 'News',
       sectionId: 'news',
       path: '/news',
@@ -70,7 +70,7 @@ const Header = () => {
       label: 'Events',
       sectionId: 'events',
       path: '/events',
-    },
+    },*/
 /*    {
       label: 'Careers',
       sectionId: 'careers',
