@@ -4,14 +4,7 @@ interface BrandTextProps {
 }
 const BrandText: React.FC<BrandTextProps> = ({ className = '' }) => {
     return (
-        <span
-            className={`font-['Bodoni_Moda'] ${className}`}
-            style={{
-                fontFamily: "'Bodoni Moda', serif",
-            }}
-        >
-      3G Consultants
-    </span>
+        <span className={`bodoni-font font-bold ${className}`}>3G Consultants</span>
     )
 }
 export default BrandText
