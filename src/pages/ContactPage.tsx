@@ -98,7 +98,7 @@ const ContactPage = () => {
                         Phone
                       </h3>
                       <p className="text-gray-600">
-                        Support: (+94) 11 592 5015 / 16
+                        Support: (+94) 11 283 5074
                     {/*    Main: 0115 925 015*/}
                         <br />
 

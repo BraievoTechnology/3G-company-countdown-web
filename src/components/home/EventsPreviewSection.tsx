@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { CalendarIcon, MapPinIcon, ClockIcon } from 'lucide-react';
 import SectionTitle from '../ui/SectionTitle';
 import Button from '../ui/Button';
+
 const upcomingEvents = [{
   id: 1,
   title: 'Sustainable Construction Workshop',
