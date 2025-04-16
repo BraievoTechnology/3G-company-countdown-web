@@ -1,105 +1,147 @@
-import SectionTitle from '../components/ui/SectionTitle';
-import Button from '../components/ui/Button';
-import { BuildingIcon, DropletIcon, LeafIcon, BriefcaseIcon, MapIcon } from 'lucide-react';
-const services = [{
-  id: 'procurement',
-  title: 'Procurement and Contracts',
-  description: 'Procurement involves making purchasing decisions under conditions of scarcity. To ensure project success, a legally binding contract is essential, as it defines the rights and obligations of all parties involved. Effective Contract Administration is key to successfully delivering the project.',
-  icon: <BriefcaseIcon size={48} className="text-yellow-500" />,
-  link: '/services/procurement',
-  image: 'https://images.unsplash.com/photo-1664575197229-3bbebc281874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
-}, {
-  id: 'highways',
-  title: 'Highways and Transportation Engineering',
-  description: "Sri Lanka's ongoing infrastructure developments, particularly in roads and related works, have opened up valuable opportunities for the firm to demonstrate its expertise in recent Highways and Transportation projects.",
-  icon: <div size={48} className="text-yellow-500" />,
-  link: '/services/highways',
-  image: 'https://images.unsplash.com/photo-1545126634-40e8a2a3141a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80'
-}, {
-  id: 'water',
-  title: 'Water Resources Engineering',
-  description: '3G Consultants (Pvt) Ltd. places high importance on water conservation and has consistently focused on sustainable water resource management, strictly following international standards in Water Resource Engineering.',
-  icon: <DropletIcon size={48} className="text-yellow-500" />,
-  link: '/services/water',
-  image: 'https://images.unsplash.com/photo-1574155376612-bfa4ed8aabfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
-}, {
-  id: 'environmental',
-  title: 'Environmental and Climate Resilience Engineering',
-  description: 'Sri Lanka, known for its rich biodiversity, offers ideal conditions for diverse flora and fauna. 3G Consultants (Pvt) Ltd. is committed to environmental protection and strongly values sustainable development and conservation.',
-  icon: <LeafIcon size={48} className="text-yellow-500" />,
-  link: '/services/environmental',
-  image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80'
-}, {
-  id: 'urban',
-  title: 'Urban, Rural and Regional Development',
-  description: 'To meet the growing population and rising living standards, numerous Urban, Rural, and Regional development projects are being initiated. 3G Consultants (Pvt) Ltd. believes that well-planned, innovative design is essential for these projects, especially when considering future expansion needs.',
-  icon: <MapIcon size={48} className="text-yellow-500" />,
-  link: '/services/urban',
-  image: 'https://images.unsplash.com/photo-1486744328743-c1151100a95a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80'
-}, {
-  id: 'housing',
-  title: 'Commercial and Housing Development',
-  description: 'In many developing countries, there is a growing trend to adopt modern living standards by embracing Western-inspired architectural styles and advanced technologies, seen in developments like luxury housing, IT parks, educational cities, waterfronts, high-rise buildings, and iconic structures.',
-  icon: <BuildingIcon size={48} className="text-yellow-500" />,
-  link: '/services/housing',
-  image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80'
-}];
+
+import SectionTitle from '../components/ui/SectionTitle'
+import Button from '../components/ui/Button'
+import {
+  BuildingIcon,
+  DropletIcon,
+  LeafIcon,
+  HomeIcon,
+  BuildingIcon as UrbanIcon,
+  BriefcaseIcon,
+  MapIcon,
+} from 'lucide-react'
+const services = [
+  {
+    id: 'procurement',
+    title: 'Procurement and Contracts',
+    description:
+        'Procurement involves making buying decisions under scarcity. Whereas, in order to secure and make the project a reality, it is vital to have a proper contract between parties. A contract is a legally binding agreement between at least two parties that defines and governs the rights and obligations of the two or many parties involved. A contract is legally enforceable since it fulfils the requirements and approval of the law. A sound Contract Administration will create a path to deliver the project to a definite success.',
+    icon: <BriefcaseIcon size={48} className="text-yellow-500" />,
+    link: '/services/procurement',
+    image:
+        'https://uploadthingy.s3.us-west-1.amazonaws.com/rmu9AdGC9E2rcS1QUJfteR/1.jpg',
+  },
+  {
+    id: 'highways',
+    title: 'Highways and Transportation Engineering',
+    description:
+        "Sri Lanka, been a developing country that has initiated many infrastructure developments projects, mainly in urban and rural road development projects together with other supportive infrastructure development projects such as earthwork & paving, electrification, landscaping, widening, up-gradation and drainage and beyond. This has created many opportunities for our firm to demonstrate our talent in recent Highways and Transportation projects.",
+    icon: <div size={48} className="text-yellow-500" />,
+    link: '/services/highways',
+    image:
+        'https://uploadthingy.s3.us-west-1.amazonaws.com/4uSRqgPmWzgHjbBK4u28DW/2.jpg',
+  },
+  {
+    id: 'water',
+    title: 'Water Resources Engineering',
+    description:
+        'It’s said that “Water is more precious than gold”. We at 3G Consultants (Pvt) Ltd. has always highly valued the conservation of natural resources such as water. Sustainable management of water resources has been a key concern of 3G Consultants (Pvt) Ltd. since the beginnings and has always been one of our focused areas of solution delivery thanks to the importance we have placed on Water Resource Engineering. Therefore, we always adhere and respect the international standards and regulations when it comes to water resource engineering.',
+    icon: <DropletIcon size={48} className="text-yellow-500" />,
+    link: '/services/water',
+    image:
+        'https://uploadthingy.s3.us-west-1.amazonaws.com/7qW7tVknySk7LQaiogGRZJ/3.jpg',
+  },
+  {
+    id: 'environmental',
+    title: 'Environmental and Climate Resilience Engineering',
+    description:
+        'Sri Lanka is an island nation, exhibiting remarkable biological diversity and considered to be the richest country in the Asian region in terms of species concentration. Ecological, climatic, soil and topographical variability across the country provides favourable conditions for many types of species of flora and fauna in most localities. We at 3G Consultants (Pvt) Ltd., believe that it’s our responsibility to protect the environment and we have always cherished the idea of sustainable development and conservation of the environment.',
+    icon: <LeafIcon size={48} className="text-yellow-500" />,
+    link: '/services/environmental',
+    image:
+        'https://uploadthingy.s3.us-west-1.amazonaws.com/paBfbAoUK3DgL22hJspd68/4.jpg',
+  },
+  {
+    id: 'urban',
+    title: 'Urban, Rural and Regional Development',
+    description:
+        'With the ever-increasing population and need of enhancing living standards, there are many Urban, Rural, and Regional development projects launched to support major developments in the country. When it comes to such projects, it’s not only crucial but also timely to consider the need for future expansion. We believe that a well-planned innovative design plays a pivotal role in such urban development projects.',
+    icon: <MapIcon size={48} className="text-yellow-500" />,
+    link: '/services/urban',
+    image:
+        'https://uploadthingy.s3.us-west-1.amazonaws.com/7Xj1Fs74eA2FTDKyEzdC1n/5.jpg',
+  },
+  {
+    id: 'housing',
+    title: 'Commercial and Housing Development',
+    description:
+        'It’s become a trend in most of the developing countries to imitate the western world by acquiring modern living standards with modern architectural features and latest technologies such as luxury housing developments, educational cities, IT parks, condominiums, waterfront developments, iconic buildings, luxury hotels, high rise buildings, townships, luxury Villas and more.',
+    icon: <BuildingIcon size={48} className="text-yellow-500" />,
+    link: '/services/housing',
+    image:
+        'https://uploadthingy.s3.us-west-1.amazonaws.com/tP7WEaVdh371WvA6QJsycM/6.jpg',
+  },
+]
 const ServicesPage = () => {
-  return <div className="w-full">
-      {/* Hero Section */}
-      <section className="relative bg-blue-900 text-white py-24">
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30" style={{
-        backgroundImage: "url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"
-      }}></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Services</h1>
-          <p className="text-xl max-w-3xl">
-            Comprehensive construction and engineering solutions tailored to
-            meet your specific project needs.
-          </p>
-        </div>
-      </section>
-      {/* Services Overview */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <SectionTitle title="What We Offer" subtitle="BuildConstruct provides a wide range of services across the construction and engineering spectrum." />
-          <div className="space-y-16">
-            {services.map((service, index) => <div key={service.id} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
-                <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                  <div className="flex items-center mb-6">
-                    {service.icon}
-                    <h2 className="text-3xl font-bold text-blue-900 ml-4">
-                      {service.title}
-                    </h2>
-                  </div>
-                  <p className="text-gray-700 mb-6">{service.description}</p>
-                  <Button to={service.link} variant="secondary">
-                    Learn More
-                  </Button>
-                </div>
-                <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                  <img src={service.image} alt={service.title} className="rounded-lg shadow-lg w-full h-80 object-cover" />
-                </div>
-              </div>)}
+  return (
+      <div className="w-full">
+        {/* Hero Section */}
+        <section className="relative bg-blue-900 text-white py-24">
+          <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+              style={{
+                backgroundImage:
+                    "url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')",
+              }}
+          ></div>
+          <div className="container mx-auto px-4 relative z-10">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Services</h1>
+            <p className="text-xl max-w-3xl">
+              Comprehensive construction and engineering solutions tailored to
+              meet your specific project needs.
+            </p>
           </div>
-        </div>
-      </section>
-      {/* CTA Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-blue-900 mb-6">
-            Need a Custom Solution?
-          </h2>
-          <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            Our team of experts can develop a tailored approach to meet your
-            specific project requirements.
-          </p>
-          <Button to="/contact" variant="primary">
-            Contact Us for a Consultation
-          </Button>
-        </div>
-      </section>
-    </div>;
-};
-export default ServicesPage;
-//test commit
+        </section>
+        {/* Services Overview */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <SectionTitle
+                title="What We Offer"
+                subtitle="BuildConstruct provides a wide range of services across the construction and engineering spectrum."
+            />
+            <div className="space-y-16">
+              {services.map((service, index) => (
+                  <div
+                      key={service.id}
+                      className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
+                  >
+                    <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                      <div className="flex items-center mb-6">
+                        {service.icon}
+                        <h2 className="text-3xl font-bold text-blue-900 ml-4">
+                          {service.title}
+                        </h2>
+                      </div>
+                      <p className="text-gray-700">{service.description}</p>
+                    </div>
+                    <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                      <img
+                          src={service.image}
+                          alt={service.title}
+                          className="rounded-lg shadow-lg w-full h-80 object-cover"
+                      />
+                    </div>
+                  </div>
+              ))}
+            </div>
+          </div>
+        </section>
+        {/* CTA Section */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl font-bold text-blue-900 mb-6">
+              Need a Custom Solution?
+            </h2>
+            <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+              Our team of experts can develop a tailored approach to meet your
+              specific project requirements.
+            </p>
+            <Button to="/contact" variant="primary">
+              Contact Us for a Consultation
+            </Button>
+          </div>
+        </section>
+      </div>
+  )
+}
+export default ServicesPage
