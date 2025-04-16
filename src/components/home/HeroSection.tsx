@@ -66,7 +66,7 @@ const HeroSection = () => {
                     </FadeIn>
                     <FadeIn delay={0.4}>
                         <p className="text-xl md:text-2xl mb-8 opacity-90">
-                            3gConsultants delivers innovative engineering solutions with
+                            3G Consultants delivers innovative engineering solutions with
                             precision, expertise, and sustainable practices.
                         </p>
                     </FadeIn>

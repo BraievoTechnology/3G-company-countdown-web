@@ -1,4 +1,4 @@
-import  { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import {
   MenuIcon,
@@ -8,17 +8,15 @@ import {
   ClockIcon,
 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import BrandText from '../ui/BrandText'
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isSticky, setIsSticky] = useState(false)
+  const [hasScrolled, setHasScrolled] = useState(false)
   const location = useLocation()
-  const isHome = location.pathname === '/'
   const navigate = useNavigate()
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0)
-      setIsSticky(window.scrollY > 100)
+      setHasScrolled(window.scrollY > 10)
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
@@ -27,7 +25,7 @@ const Header = () => {
     setIsMenuOpen(false)
     if (path === '/careers') {
       navigate(path)
-    } else if (isHome && sectionId) {
+    } else if (hasScrolled && sectionId) {
       const element = document.getElementById(sectionId)
       if (element) {
         element.scrollIntoView({
@@ -42,18 +40,6 @@ const Header = () => {
       })
     }
   }
-  useEffect(() => {
-    const scrollTo = location.state?.scrollTo
-    if (scrollTo) {
-      const element = document.getElementById(scrollTo)
-      if (element) {
-        element.scrollIntoView({
-          behavior: 'smooth',
-        })
-      }
-      window.history.replaceState({}, document.title)
-    }
-  }, [location])
   const navItems = [
     {
       label: 'Home',
@@ -85,11 +71,11 @@ const Header = () => {
       sectionId: 'events',
       path: '/events',
     },
-/*    {
+    {
       label: 'Careers',
       sectionId: 'careers',
       path: '/careers',
-    },*/
+    },
     {
       label: 'Contact',
       sectionId: 'contact',
@@ -152,22 +138,22 @@ const Header = () => {
     }),
   }
   return (
-      <header className="w-full">
+      <header className="sticky top-0 w-full z-50">
         <motion.div
             initial="initial"
             animate="animate"
             variants={headerVariants}
-            className="bg-blue-900 text-white py-2"
+            className={`bg-blue-900 text-white py-2 transition-all duration-300 ${hasScrolled ? 'rounded-b-lg' : ''}`}
         >
           <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-4 mb-2 md:mb-0">
               <div className="flex items-center">
                 <PhoneIcon size={16} className="mr-2" />
-                <span className="text-sm">(+94) 11 592 5015 / 16</span>
+                <span className="text-sm">011 283 5074</span>
               </div>
               <div className="flex items-center">
                 <MailIcon size={16} className="mr-2" />
-                <span className="text-sm">info@3gconsultants.lk</span>
+                <span className="text-sm">info@3gconsultants.com</span>
               </div>
             </div>
             <div className="flex items-center">
@@ -176,15 +162,8 @@ const Header = () => {
             </div>
           </div>
         </motion.div>
-        <motion.div
-            animate={{
-              y: isSticky ? 0 : -1,
-              opacity: 1,
-            }}
-            initial={{
-              opacity: 0,
-            }}
-            className={`${isSticky ? 'fixed top-0 left-0 right-0 shadow-lg' : 'relative'} bg-white/95 backdrop-blur-md z-50 ${isScrolled ? 'rounded-b-2xl' : ''}`}
+        <div
+            className={`bg-white shadow-md transition-all duration-300 ${hasScrolled ? 'rounded-b-2xl' : ''}`}
         >
           <div className="container mx-auto px-4 py-4">
             <div className="flex justify-between items-center">
@@ -197,9 +176,20 @@ const Header = () => {
                     stiffness: 300,
                     damping: 20,
                   }}
+                  className="relative flex items-center gap-3"
               >
-                <Link to="/" className="text-2xl font-bold text-blue-900">
-                  3G Consultants
+                <div className="flex-shrink-0">
+                  <img
+                      src="https://uploadthingy.s3.us-west-1.amazonaws.com/f1yqtq4t3Xjy4NfwYgbtYe/logo.jpg"
+                      alt="3G Consultants Logo"
+                      className="w-10 h-10 object-contain"
+                  />
+                </div>
+                <Link
+                    to="/"
+                    className="text-2xl font-bold text-blue-900 relative z-10"
+                >
+                  <BrandText />
                 </Link>
               </motion.div>
               <nav className="hidden md:flex space-x-8">
@@ -246,7 +236,7 @@ const Header = () => {
               </motion.button>
             </div>
           </div>
-        </motion.div>
+        </div>
         <AnimatePresence>
           {isMenuOpen && (
               <motion.div

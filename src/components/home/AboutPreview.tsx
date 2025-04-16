@@ -1,16 +1,16 @@
-
+import React from 'react'
 import { motion } from 'framer-motion'
 import Button from '../ui/Button'
 import {
     CheckCircleIcon,
-    UsersIcon,
+    ScaleIcon,
     GlobeIcon,
     AwardIcon,
     BuildingIcon,
+    BriefcaseIcon,
 } from 'lucide-react'
 const AboutPreview = () => {
     const highlights = [
-        '10+ years of engineering excellence',
         'Innovative sustainable solutions',
         'Expert team of professional engineers',
         'Global project experience',
@@ -18,7 +18,7 @@ const AboutPreview = () => {
     const stats = [
         {
             icon: <BuildingIcon className="w-6 h-6" />,
-            value: '20+',
+            value: '125+',
             label: 'Projects Completed',
             animation: {
                 y: [0, -5, 0],
@@ -26,9 +26,9 @@ const AboutPreview = () => {
             },
         },
         {
-            icon: <UsersIcon className="w-6 h-6" />,
-            value: '250+',
-            label: 'Expert Engineers',
+            icon: <ScaleIcon className="w-6 h-6" />,
+            value: '50+',
+            label: 'Claims Managed',
             animation: {
                 scale: [1, 1.2, 1],
                 rotate: [0, 0, 0],
@@ -36,16 +36,16 @@ const AboutPreview = () => {
         },
         {
             icon: <GlobeIcon className="w-6 h-6" />,
-            value: '30+',
+            value: '7+',
             label: 'Countries Served',
             animation: {
                 rotate: [0, 360],
             },
         },
         {
-            icon: <AwardIcon className="w-6 h-6" />,
-            value: '45+',
-            label: 'Industry Awards',
+            icon: <BriefcaseIcon className="w-6 h-6" />,
+            value: '10+',
+            label: 'Years Experience',
             animation: {
                 scale: [1, 1.2, 1],
                 y: [0, -5, 0],
@@ -111,7 +111,7 @@ const AboutPreview = () => {
                                     delay: 0.2,
                                 }}
                             >
-                                3gConsultants has been at the forefront of engineering
+                                3G Consultants has been at the forefront of engineering
                                 consultancy for over two decades. Our expertise spans across
                                 infrastructure development, environmental engineering, and
                                 sustainable design solutions.
@@ -233,9 +233,9 @@ const AboutPreview = () => {
                                 delay: 0.6,
                             }}
                         >
-          {/*                  <Button to="/about" variant="secondary">
+                            <Button to="/about" variant="secondary">
                                 Discover Our Story
-                            </Button>*/}
+                            </Button>
                         </motion.div>
                     </motion.div>
                     <div className="grid grid-cols-2 gap-4">
