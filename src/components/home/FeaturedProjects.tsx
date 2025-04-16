@@ -185,7 +185,7 @@ const ProjectCard = ({ project }: { project: (typeof projects)[0] }) => {
                 {content.description}
               </motion.p>
               <motion.div className="flex items-center font-semibold text-yellow-400 group/link">
-         {/*       <Link
+{/*                <Link
                     to={project.link}
                     className="flex items-center hover:text-yellow-300"
                 >
@@ -217,9 +217,9 @@ const FeaturedProjects = () => {
             ))}
           </div>
           <div className="mt-12 text-center">
-   {/*         <Button to="/projects" variant="secondary">
+            <Button to="/projects" variant="secondary">
               View All Projects
-            </Button>*/}
+            </Button>
           </div>
         </div>
       </section>
