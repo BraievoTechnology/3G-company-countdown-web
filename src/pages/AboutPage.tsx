@@ -11,26 +11,6 @@ import {
 } from 'lucide-react'
 const teamMembers = [
   {
-    name: 'Saman Gamage',
-    role: 'Director',
-    shortBio:
-        'Mr. Saman Gamage Co-founded 3G Consultants in year 2014 and successfully chaired as director.',
-    fullBio:
-        'Mr. Saman Gamage Co-founded 3G Consultants in year 2014 and successfully chaired as managing director. A Chartered Quantity Surveyor from the University of Moratuwa with over 23 years of experience and holds BSc. QS. (Hons) AIQSSL, M.Sc (Construction Law & Dispute Resolution),Dip. Arb.',
-    image:
-        'https://uploadthingy.s3.us-west-1.amazonaws.com/7MjpxjHuuGeQWYdNPLGo9d/saman.jpg',
-    expertise: [
-      'Strategic Leadership',
-      'Sustainable Construction',
-      'Project Management',
-    ],
-    education: 'Ph.D. in Civil Engineering, Stanford University',
-    social: {
-      linkedin: 'https://linkedin.com',
-      facebook: 'https://facebook.com',
-    },
-  },
-  {
     name: 'Prasad Jasinghe',
     role: 'Managing Director',
     shortBio:
@@ -45,6 +25,26 @@ const teamMembers = [
       'Technical Innovation',
     ],
     education: 'M.S. in Structural Engineering, MIT',
+    social: {
+      linkedin: 'https://linkedin.com',
+      facebook: 'https://facebook.com',
+    },
+  },
+  {
+    name: 'Saman Gamage',
+    role: 'Director',
+    shortBio:
+        'Mr. Saman Gamage Co-founded 3G Consultants in year 2014 and successfully chaired as director.',
+    fullBio:
+        'Mr. Saman Gamage Co-founded 3G Consultants in year 2014 and successfully chaired as managing director. A Chartered Quantity Surveyor from the University of Moratuwa with over 23 years of experience and holds BSc. QS. (Hons) AIQSSL, M.Sc (Construction Law & Dispute Resolution),Dip. Arb.',
+    image:
+        'https://uploadthingy.s3.us-west-1.amazonaws.com/7MjpxjHuuGeQWYdNPLGo9d/saman.jpg',
+    expertise: [
+      'Strategic Leadership',
+      'Sustainable Construction',
+      'Project Management',
+    ],
+    education: 'Ph.D. in Civil Engineering, Stanford University',
     social: {
       linkedin: 'https://linkedin.com',
       facebook: 'https://facebook.com',
@@ -164,12 +164,12 @@ const TeamMemberCard = ({ member }: { member: (typeof teamMembers)[0] }) => {
             />
           </div>
           <div className="p-6 text-center">
-            <h3 className="text-xl font-bold text-blue-900">{member.name}</h3>
+            <h3 className="text-xl font-bold text-black">{member.name}</h3>
             <p className="text-yellow-500 font-medium mt-1">{member.role}</p>
             <p className="text-gray-600 text-sm mt-3">{member.shortBio}</p>
           </div>
           <motion.div
-              className="absolute inset-0 bg-gradient-to-br from-blue-900 to-blue-800 p-6 flex flex-col opacity-0 group-hover:opacity-100 transition-all duration-300"
+              className="absolute inset-0 bg-white p-6 flex flex-col opacity-0 group-hover:opacity-100 transition-all duration-300"
               initial={{
                 opacity: 0,
               }}
@@ -180,14 +180,14 @@ const TeamMemberCard = ({ member }: { member: (typeof teamMembers)[0] }) => {
                 duration: 0.3,
               }}
           >
-            <div className="text-white h-full flex flex-col justify-between">
+            <div className="text-black h-full flex flex-col justify-between">
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-bold mb-2">{member.name}</h3>
-                <p className="text-yellow-500 font-medium">{member.role}</p>
+                <p className="text-black font-medium">{member.role}</p>
               </div>
               <div className="flex-grow overflow-y-auto scrollbar-hide">
                 <div className="text-center">
-                  <p className="text-white/90 text-sm leading-relaxed">
+                  <p className="text-black text-sm leading-relaxed">
                     {member.fullBio}
                   </p>
                 </div>
@@ -241,9 +241,9 @@ const StaffCard = ({ member }: { member: (typeof regularStaff)[0] }) => {
 const AboutPage = () => {
   return (
       <div className="w-full">
-        <section className="relative bg-blue-900 text-white py-24">
+        <section className="relative bg-black text-white py-24">
           <div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50"
               style={{
                 backgroundImage:
                     "url('https://images.unsplash.com/photo-1485083269755-a7b559a4fe5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')",
@@ -254,21 +254,19 @@ const AboutPage = () => {
           </div>
         </section>
 
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-black">
           <div className="container mx-auto px-4">
             <div className="flex items-center gap-2">
-              <span className="text-[50px] font-bold text-blue-900">We</span>
-              <span className="text-[50px] font-bold text-blue-900">
+              <span className="text-[50px] font-bold text-[#f1c235]">We</span>
+              <span className="text-[50px] font-bold text-[#f1c235]">
               <WordCarousel words={['Create', 'Develop', 'Build']} />
             </span>
-              <span className="text-[50px] font-bold text-blue-900">
-              Solutions
-            </span>
+              <span className="text-[50px] font-bold text-[#f1c235]">Solutions</span>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <p className="mb-4 mt-4 text-gray-700">
+                <p className="mb-4 mt-4 text-white">
                   Being a market thought leader since 2014, 3G Consultants (Pvt)
                   Ltd, has been making innovative waves in the rapidly developing
                   construction industry in Sri Lanka. Specializing in Quantity
@@ -278,7 +276,7 @@ const AboutPage = () => {
                   more, 3G Consultant (Pvt) Ltd, has roared in the industry by
                   providing exceptional service to its clientele.
                 </p>
-                <p className="mb-4 text-gray-700">
+                <p className="mb-4 text-white">
                   Providing an array of services such as Geometric Surveys,
                   Feasibility Studies, Action Plans, Sociological, and
                   Environmental Studies, Engineering Design, Economic and
@@ -292,7 +290,7 @@ const AboutPage = () => {
                   commitment to client’s success. That’s what sets us apart. We
                   are here for the long-haul.
                 </p>
-                <p className="mb-4 text-gray-700">
+                <p className="mb-4 text-white">
                   Our team can seamlessly work with multi-disciplined teams both
                   locally and internationally as they come from a vast array of
                   technical backgrounds and have worked with many different
@@ -305,7 +303,7 @@ const AboutPage = () => {
                   state-of-the-art software solutions we use at 3G Consultants
                   (Pvt) Ltd.
                 </p>
-                <p className="text-gray-700">
+                <p className="text-white">
                   We take pride in focusing on reducing risk and improving the
                   value we provide for customers while delivering an all-inclusive
                   suite of construction consulting expertise in all market sectors
@@ -328,13 +326,13 @@ const AboutPage = () => {
           </div>
         </section>
 
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-[#f1c235]">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="bg-white p-8 rounded-lg shadow-md">
                 <div className="flex items-center mb-6">
                   <EyeIcon size={32} className="text-yellow-500 mr-4" />
-                  <h2 className="text-3xl font-bold text-blue-900">Our Vision</h2>
+                  <h2 className="text-3xl font-bold text-black">Our Vision</h2>
                 </div>
                 <p className="text-gray-700 mb-4 italic font-semibold">
                   "To be a world-class engineering consultancy firm committed to
@@ -345,9 +343,7 @@ const AboutPage = () => {
               <div className="bg-white p-8 rounded-lg shadow-md">
                 <div className="flex items-center mb-6">
                   <TargetIcon size={32} className="text-yellow-500 mr-4" />
-                  <h2 className="text-3xl font-bold text-blue-900">
-                    Our Mission
-                  </h2>
+                  <h2 className="text-3xl font-bold text-black">Our Mission</h2>
                 </div>
                 <p className="text-gray-700 mb-4 italic font-semibold">
                   "Our Mission is to strengthen our position as a market leader
@@ -362,7 +358,7 @@ const AboutPage = () => {
           </div>
         </section>
 
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-black">
           <div className="container mx-auto px-4">
             <SectionTitle
                 title="Director Board"
@@ -377,7 +373,7 @@ const AboutPage = () => {
           </div>
         </section>
 
-        <section className="py-16 bg-gray-50">
+{/*        <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
             <SectionTitle
                 title="Our Staff"
@@ -390,7 +386,7 @@ const AboutPage = () => {
               ))}
             </div>
           </div>
-        </section>
+        </section>*/}
       </div>
   )
 }

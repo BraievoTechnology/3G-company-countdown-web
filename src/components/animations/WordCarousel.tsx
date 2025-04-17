@@ -17,7 +17,7 @@ const WordCarousel: React.FC<WordCarouselProps> = ({
     }, interval);
     return () => clearInterval(changeWord);
   }, [words, interval]);
-  return <div className={`inline-flex relative min-w-[80px] h-10 items-center justify-center bg-yellow-500 text-blue-900 font-medium rounded px-2 ${className}`}>
+  return <div className={`inline-flex relative min-w-[80px] h-13 items-center justify-center bg-yellow-500 text-white font-medium rounded px-2 ${className}`}>
       <AnimatePresence mode="wait">
         <motion.span key={words[index]} initial={{
         y: 30,
