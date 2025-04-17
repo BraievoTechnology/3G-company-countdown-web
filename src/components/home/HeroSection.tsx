@@ -92,13 +92,13 @@ const HeroSection = () => {
                   scale: 0.95,
                 }}
               >
-                <Button
+                {/* <Button
                   to="/contact"
                   variant="outline"
                   className="border-1 border-white text-white hover:border-[#f1c235] hover:text-[#f1c235]"
                 >
                   Consult Us
-                </Button>
+                </Button> */}
               </motion.div>
             </div>
           </FadeIn>
