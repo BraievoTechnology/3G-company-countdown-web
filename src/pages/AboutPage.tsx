@@ -11,26 +11,6 @@ import {
 } from 'lucide-react'
 const teamMembers = [
   {
-    name: 'Saman Gamage',
-    role: 'Director',
-    shortBio:
-        'Mr. Saman Gamage Co-founded 3G Consultants in year 2014 and successfully chaired as director.',
-    fullBio:
-        'Mr. Saman Gamage Co-founded 3G Consultants in year 2014 and successfully chaired as managing director. A Chartered Quantity Surveyor from the University of Moratuwa with over 23 years of experience and holds BSc. QS. (Hons) AIQSSL, M.Sc (Construction Law & Dispute Resolution),Dip. Arb.',
-    image:
-        'https://uploadthingy.s3.us-west-1.amazonaws.com/7MjpxjHuuGeQWYdNPLGo9d/saman.jpg',
-    expertise: [
-      'Strategic Leadership',
-      'Sustainable Construction',
-      'Project Management',
-    ],
-    education: 'Ph.D. in Civil Engineering, Stanford University',
-    social: {
-      linkedin: 'https://linkedin.com',
-      facebook: 'https://facebook.com',
-    },
-  },
-  {
     name: 'Prasad Jasinghe',
     role: 'Managing Director',
     shortBio:
@@ -45,6 +25,26 @@ const teamMembers = [
       'Technical Innovation',
     ],
     education: 'M.S. in Structural Engineering, MIT',
+    social: {
+      linkedin: 'https://linkedin.com',
+      facebook: 'https://facebook.com',
+    },
+  },
+  {
+    name: 'Saman Gamage',
+    role: 'Director',
+    shortBio:
+        'Mr. Saman Gamage Co-founded 3G Consultants in year 2014 and successfully chaired as director.',
+    fullBio:
+        'Mr. Saman Gamage Co-founded 3G Consultants in year 2014 and successfully chaired as managing director. A Chartered Quantity Surveyor from the University of Moratuwa with over 23 years of experience and holds BSc. QS. (Hons) AIQSSL, M.Sc (Construction Law & Dispute Resolution),Dip. Arb.',
+    image:
+        'https://uploadthingy.s3.us-west-1.amazonaws.com/7MjpxjHuuGeQWYdNPLGo9d/saman.jpg',
+    expertise: [
+      'Strategic Leadership',
+      'Sustainable Construction',
+      'Project Management',
+    ],
+    education: 'Ph.D. in Civil Engineering, Stanford University',
     social: {
       linkedin: 'https://linkedin.com',
       facebook: 'https://facebook.com',
