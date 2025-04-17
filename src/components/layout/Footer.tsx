@@ -186,7 +186,7 @@ const Footer = () => {
                         </h3>
                         <ul className="space-y-3">
                             {/*['Home', 'About Us', 'Services', 'Projects', 'Contact']*/}
-                            {['Home',  'Contact'].map(
+                            {['Home',  ].map(
                                 (item, index) => (
                                     <motion.li
                                         key={index}

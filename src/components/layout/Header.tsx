@@ -77,11 +77,11 @@ const Header = () => {
       sectionId: 'careers',
       path: '/careers',
     },*/
-    {
+/*    {
       label: 'Contact',
       sectionId: 'contact',
       path: '/contact',
-    },
+    },*/
   ]
   const headerVariants = {
     initial: {
