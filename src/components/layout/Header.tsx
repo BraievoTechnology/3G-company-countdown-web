@@ -62,26 +62,26 @@ const Header = () => {
       sectionId: 'projects',
       path: '/projects',
     },
-/*    {
-      label: 'News',
-      sectionId: 'news',
-      path: '/news',
-    },
-    {
-      label: 'Events',
-      sectionId: 'events',
-      path: '/events',
-    },
-    {
-      label: 'Careers',
-      sectionId: 'careers',
-      path: '/careers',
-    },*/
-    {
-      label: 'Contact',
-      sectionId: 'contact',
-      path: '/contact',
-    },
+    // {
+    //   label: 'News',
+    //   sectionId: 'news',
+    //   path: '/news',
+    // },
+    // {
+    //   label: 'Events',
+    //   sectionId: 'events',
+    //   path: '/events',
+    // },
+    // {
+    //   label: 'Careers',
+    //   sectionId: 'careers',
+    //   path: '/careers',
+    // },
+    // {
+    //   label: 'Contact',
+    //   sectionId: 'contact',
+    //   path: '/contact',
+    // },
   ]
   const headerVariants = {
     initial: {
@@ -139,153 +139,153 @@ const Header = () => {
     }),
   }
   return (
-      <header className="sticky top-0 w-full z-50">
-        <motion.div
-            initial="initial"
-            animate="animate"
-            variants={headerVariants}
-            className={`bg-blue-900 text-white py-2 transition-all duration-300 ${hasScrolled ? 'rounded-b-lg' : ''}`}
-        >
-          <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center space-x-4 mb-2 md:mb-0">
-              <div className="flex items-center">
-                <PhoneIcon size={16} className="mr-2" />
-                <span className="text-sm">011 283 5074</span>
-              </div>
-              <div className="flex items-center">
-                <MailIcon size={16} className="mr-2" />
-                <span className="text-sm">info@3gconsultants.com</span>
-              </div>
+    <header className="sticky top-0 w-full z-50">
+      <motion.div
+        initial="initial"
+        animate="animate"
+        variants={headerVariants}
+        className={`bg-black text-white py-2 transition-all duration-300`}
+      >
+        <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+          <div className="flex items-center space-x-4 mb-2 md:mb-0">
+            <div className="flex items-center">
+              <PhoneIcon size={16} className="mr-2" />
+              <span className="text-sm">011 283 5074</span>
             </div>
             <div className="flex items-center">
-              <ClockIcon size={16} className="mr-2" />
-              <span className="text-sm">Mon - Fri: 8:00AM - 5:00PM</span>
+              <MailIcon size={16} className="mr-2" />
+              <span className="text-sm">info@3gconsultants.com</span>
             </div>
           </div>
-        </motion.div>
-        <div
-            className={`bg-white shadow-md transition-all duration-300 ${hasScrolled ? 'rounded-b-2xl' : ''}`}
-        >
-          <div className="container mx-auto px-4 py-4">
-            <div className="flex justify-between items-center">
-              <motion.div
-                  whileHover={{
-                    scale: 1.05,
-                  }}
-                  transition={{
-                    type: 'spring',
-                    stiffness: 300,
-                    damping: 20,
-                  }}
-                  className="relative flex items-center gap-3"
-              >
-                <div className="flex-shrink-0">
-                  <img
-                      src="https://uploadthingy.s3.us-west-1.amazonaws.com/f1yqtq4t3Xjy4NfwYgbtYe/logo.jpg"
-                      alt="3G Consultants Logo"
-                      className="w-10 h-10 object-contain"
-                  />
-                </div>
-                <Link
-                    to="/"
-                    className="text-2xl font-bold text-blue-900 relative z-10"
-                >
-                  <BrandText />
-                </Link>
-              </motion.div>
-              <nav className="hidden md:flex space-x-8">
-                {navItems.map((item, index) => (
-                    <motion.button
-                        key={item.path}
-                        onClick={() => handleNavClick(item.sectionId, item.path)}
-                        className="text-gray-800 hover:text-blue-700 font-medium cursor-pointer"
-                        whileHover={{
-                          scale: 1.1,
-                          transition: {
-                            type: 'spring',
-                            stiffness: 400,
-                            damping: 10,
-                          },
-                        }}
-                        initial={{
-                          opacity: 0,
-                          y: -20,
-                        }}
-                        animate={{
-                          opacity: 1,
-                          y: 0,
-                          transition: {
-                            delay: index * 0.1,
-                          },
-                        }}
-                    >
-                      {item.label}
-                    </motion.button>
-                ))}
-              </nav>
-              <motion.button
-                  onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  className="md:hidden text-gray-800 focus:outline-none"
-                  whileHover={{
-                    scale: 1.1,
-                  }}
-                  whileTap={{
-                    scale: 0.95,
-                  }}
-              >
-                <MenuIcon size={24} />
-              </motion.button>
-            </div>
+          <div className="flex items-center">
+            <ClockIcon size={16} className="mr-2" />
+            <span className="text-sm">Mon - Fri: 8:00AM - 5:00PM</span>
           </div>
         </div>
-        <AnimatePresence>
-          {isMenuOpen && (
-              <motion.div
-                  initial="closed"
-                  animate="open"
-                  exit="closed"
-                  variants={mobileMenuVariants}
-                  className="md:hidden bg-white fixed inset-0 z-50 overflow-y-auto"
+      </motion.div>
+      <div
+        className={`bg-black shadow-md transition-all duration-300 ${hasScrolled ? 'rounded-b-2xl' : ''}`}
+      >
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex justify-between items-center">
+            <motion.div
+              whileHover={{
+                scale: 1.05,
+              }}
+              transition={{
+                type: 'spring',
+                stiffness: 300,
+                damping: 20,
+              }}
+              className="relative flex items-center gap-3"
+            >
+              <div className="flex-shrink-0">
+                <img
+                  src="https://uploadthingy.s3.us-west-1.amazonaws.com/f1yqtq4t3Xjy4NfwYgbtYe/logo.jpg"
+                  alt="3G Consultants Logo"
+                  className="w-10 h-10 object-contain"
+                />
+              </div>
+              <Link
+                to="/"
+                className="text-2xl font-bold text-[#f1c235] relative z-10 hidden md:block"
               >
-                <div className="p-4 flex justify-end">
-                  <motion.button
-                      onClick={() => setIsMenuOpen(false)}
-                      className="text-gray-800 focus:outline-none"
-                      whileHover={{
-                        scale: 1.1,
-                      }}
-                      whileTap={{
-                        scale: 0.95,
-                      }}
-                  >
-                    <CloseIcon size={24} />
-                  </motion.button>
-                </div>
-                <div className="flex flex-col items-center space-y-6 p-8">
-                  {navItems.map((item, index) => (
-                      <motion.button
-                          key={item.path}
-                          custom={index}
-                          variants={navItemVariants}
-                          onClick={() => handleNavClick(item.sectionId, item.path)}
-                          className="text-xl text-gray-800 hover:text-blue-700 font-medium"
-                          whileHover={{
-                            scale: 1.1,
-                            transition: {
-                              type: 'spring',
-                              stiffness: 400,
-                              damping: 10,
-                            },
-                          }}
-                      >
-                        {item.label}
-                      </motion.button>
-                  ))}
-                </div>
-              </motion.div>
-          )}
-        </AnimatePresence>
-      </header>
+                <BrandText />
+              </Link>
+            </motion.div>
+            <nav className="hidden md:flex space-x-8">
+              {navItems.map((item, index) => (
+                <motion.button
+                  key={item.path}
+                  onClick={() => handleNavClick(item.sectionId, item.path)}
+                  className="text-[#f1c235] hover:text-white font-medium cursor-pointer"
+                  whileHover={{
+                    scale: 1.1,
+                    transition: {
+                      type: 'spring',
+                      stiffness: 400,
+                      damping: 10,
+                    },
+                  }}
+                  initial={{
+                    opacity: 0,
+                    y: -20,
+                  }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      delay: index * 0.1,
+                    },
+                  }}
+                >
+                  {item.label}
+                </motion.button>
+              ))}
+            </nav>
+            <motion.button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden text-white focus:outline-none"
+              whileHover={{
+                scale: 1.1,
+              }}
+              whileTap={{
+                scale: 0.95,
+              }}
+            >
+              <MenuIcon size={24} />
+            </motion.button>
+          </div>
+        </div>
+      </div>
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial="closed"
+            animate="open"
+            exit="closed"
+            variants={mobileMenuVariants}
+            className="md:hidden bg-white fixed inset-0 z-50 overflow-y-auto"
+          >
+            <div className="p-4 flex justify-end">
+              <motion.button
+                onClick={() => setIsMenuOpen(false)}
+                className="text-gray-800 focus:outline-none"
+                whileHover={{
+                  scale: 1.1,
+                }}
+                whileTap={{
+                  scale: 0.95,
+                }}
+              >
+                <CloseIcon size={24} />
+              </motion.button>
+            </div>
+            <div className="flex flex-col items-center space-y-6 p-8">
+              {navItems.map((item, index) => (
+                <motion.button
+                  key={item.path}
+                  custom={index}
+                  variants={navItemVariants}
+                  onClick={() => handleNavClick(item.sectionId, item.path)}
+                  className="text-xl text-gray-800 hover:text-blue-700 font-medium"
+                  whileHover={{
+                    scale: 1.1,
+                    transition: {
+                      type: 'spring',
+                      stiffness: 400,
+                      damping: 10,
+                    },
+                  }}
+                >
+                  {item.label}
+                </motion.button>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
   )
 }
 export default Header

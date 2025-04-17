@@ -243,7 +243,7 @@ const AboutPage = () => {
       <div className="w-full">
         <section className="relative bg-black text-white py-24">
           <div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50"
               style={{
                 backgroundImage:
                     "url('https://images.unsplash.com/photo-1485083269755-a7b559a4fe5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')",
