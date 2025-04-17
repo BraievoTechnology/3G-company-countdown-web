@@ -79,19 +79,16 @@ const ContactPage = () => {
                         Our Location
                       </h3>
                       <p className="text-gray-600">
-                        3G Consultants (Pvt) Ltd
-                        <br />
-                        19/B Jeswell Pl
-                        <br />
-                        Nugegoda 10107
-                        <br />
+                        3G Consultants (Pvt) Ltd<br/>
+                        No. 19/B, Jeswell Place<br/>
+                        Nugegoda 10107<br/>
                         Sri Lanka
                       </p>
                     </div>
                   </div>
                   <div className="flex items-start">
                     <div className="bg-blue-100 p-3 rounded-full mr-4">
-                      <PhoneIcon size={24} className="text-blue-900" />
+                      <PhoneIcon size={24} className="text-blue-900"/>
                     </div>
                     <div>
                       <h3 className="text-lg font-bold text-blue-900 mb-1">
