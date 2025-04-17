@@ -233,7 +233,7 @@ const AboutPreview = () => {
                                 delay: 0.6,
                             }}
                         >
-         {/*                   <Button to="/about" variant="secondary">
+           {/*                 <Button to="/about" variant="secondary">
                                 Discover Our Story
                             </Button>*/}
                         </motion.div>

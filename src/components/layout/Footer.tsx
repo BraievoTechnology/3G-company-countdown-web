@@ -124,7 +124,7 @@ const Footer = () => {
                         }}
                     >
                         <h3 className="text-2xl font-bold text-white mb-6">
-                            3gConsultants
+                            3G Consultants
                         </h3>
                         <p className="text-blue-200 mb-8 leading-relaxed">
                             Engineering excellence through innovation and expertise. Your
@@ -324,7 +324,7 @@ const Footer = () => {
                         className="flex flex-col md:flex-row justify-between items-center text-blue-200 text-sm"
                     >
                         <p>
-                            ©️ {new Date().getFullYear()} 3gConsultants. All rights reserved.
+                            ©️ {new Date().getFullYear()} 3G Consultants. All rights reserved.
                         </p>
                         <div className="flex space-x-6 mt-4 md:mt-0">
                             <motion.a
