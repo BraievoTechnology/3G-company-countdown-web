@@ -326,7 +326,7 @@ const Footer = () => {
                         <p>
                             ©️ {new Date().getFullYear()} 3G Consultants. All rights reserved.
                         </p>
-                        <div className="flex space-x-6 mt-4 md:mt-0">
+   {/*                     <div className="flex space-x-6 mt-4 md:mt-0">
                             <motion.a
                                 whileHover={{
                                     x: 3,
@@ -345,7 +345,7 @@ const Footer = () => {
                             >
                                 Terms of Service
                             </motion.a>
-                        </div>
+                        </div>*/}
                     </motion.div>
                 </div>
             </div>
