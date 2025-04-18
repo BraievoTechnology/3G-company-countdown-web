@@ -17,10 +17,10 @@ const HeroSection = () => {
     <section className="relative bg-black text-white overflow-hidden h-screen">
       <BackgroundGradient />
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-45"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-55"
         style={{
           backgroundImage:
-            "url('https://uploadthingy.s3.us-west-1.amazonaws.com/pvPoj8hnGQA8di3HCUweKb/mumbai-skyline-skyscrapers-construction.jpg')",
+            "url('https://uploadthingy.s3.us-west-1.amazonaws.com/nbLYs5g2CKBGCcA3GkeemP/Untitled_design_%281%29.jpg')",
         }}
       />
       <motion.div
