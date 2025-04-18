@@ -9,6 +9,12 @@ const projects = [
     id: 1,
     contents: [
       {
+        title: '50TPD Knitting & Knit Processing Plant',
+        category: 'Commercial Building',
+        description:
+          'Textile Manufacturing BOI Zone, Punnaikuda, Eravur, Batticaloa',
+      },
+      {
         title: 'Ace Healthcare Derma',
         category: 'Commercial Building',
         description:
@@ -28,6 +34,7 @@ const projects = [
       },
     ],
     images: [
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/wtupUAoJxwnobWTGuRys7D/DJI_0375.jpg',
       'https://uploadthingy.s3.us-west-1.amazonaws.com/vUjkmq8jroYBp7wderSLkK/AceHealthcareDerma.jpg',
       'https://uploadthingy.s3.us-west-1.amazonaws.com/aTUVhALqL7kGeTCLbC92CV/Amrith3.jpg',
       'https://uploadthingy.s3.us-west-1.amazonaws.com/2vkpGRhamnc2b1C1dW7xt4/BOCKandy10.jpg',
@@ -37,6 +44,11 @@ const projects = [
   {
     id: 2,
     contents: [
+      {
+        title: 'The Star Innovation Center',
+        category: 'Commercial Building',
+        description: 'Star Innovation Center project, completed in 2017 in Colombo',
+      },
       {
         title: 'Bank of Ceylon Trinco',
         category: 'Commercial Building',
@@ -54,6 +66,7 @@ const projects = [
       },
     ],
     images: [
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/8cRPTxqZYNnGGPi3oUd5b4/1721638265449.jpg',
       'https://uploadthingy.s3.us-west-1.amazonaws.com/2QNFtGL86zMtM3TMkDcZ1p/BOCTrinco.jpg',
       'https://uploadthingy.s3.us-west-1.amazonaws.com/d149ikBw6vjt911SLX8dZn/ccp.jpg',
       'https://uploadthingy.s3.us-west-1.amazonaws.com/sSyHRK27oJNo9YuWnGnrrH/ColomboUrbanRegeneration.jpg',

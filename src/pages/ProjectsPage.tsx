@@ -5,214 +5,222 @@ const projectCategories = ['All', 'Ongoing', 'Completed']
 const projects = [
   {
     id: 1,
-    title:
-        'The Star Innovation Center – A Global Landmark in Sustainable Building Concept',
-    status: 'Completed',
+    title: '50TPD Knitting & Knit Processing Plant',
+    status: 'Ongoing',
     image:
-        'https://uploadthingy.s3.us-west-1.amazonaws.com/8cRPTxqZYNnGGPi3oUd5b4/1721638265449.jpg',
-    year: '2017',
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/wtupUAoJxwnobWTGuRys7D/DJI_0375.jpg',
+    year: '2025',
   },
   {
     id: 2,
     title:
-        'Cosmetic and Derma Formulation Plant for Ace Healthcare (Pvt) Ltd, Horana',
+      'The Star Innovation Center – A Global Landmark in Sustainable Building Concept',
     status: 'Completed',
     image:
-        'https://uploadthingy.s3.us-west-1.amazonaws.com/mL1m8TshKYB4GNSn1ZcZuz/AceHealthcareDerma.jpg',
-    year: '2016 to 2018',
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/8cRPTxqZYNnGGPi3oUd5b4/1721638265449.jpg',
+    year: '2017',
   },
   {
     id: 3,
     title:
-        'Residence for Amrith De Soysa and Shihani De Soysa at Park Road, Colombo',
+      'Cosmetic and Derma Formulation Plant for Ace Healthcare (Pvt) Ltd, Horana',
     status: 'Completed',
     image:
-        'https://uploadthingy.s3.us-west-1.amazonaws.com/2ajW6G5YXBJKF9quMK7CUp/Amrith3.jpg',
-    year: '2018 to 2020',
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/mL1m8TshKYB4GNSn1ZcZuz/AceHealthcareDerma.jpg',
+    year: '2016 to 2018',
   },
   {
     id: 4,
-    title: 'Rennovation / Modification of Bank of Ceylon Holiday Home at Kandy',
+    title:
+      'Residence for Amrith De Soysa and Shihani De Soysa at Park Road, Colombo',
     status: 'Completed',
     image:
-        'https://uploadthingy.s3.us-west-1.amazonaws.com/enBqd157KWkKnPSn9fenmu/BOCKandy10.jpg',
-    year: '2020',
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/2ajW6G5YXBJKF9quMK7CUp/Amrith3.jpg',
+    year: '2018 to 2020',
   },
   {
     id: 5,
-    title: 'Building for Bank of Ceylon City Branch at Trincomalee',
-    status: 'Ongoing',
-    image:
-        'https://uploadthingy.s3.us-west-1.amazonaws.com/uUTu3EvNS4hoGtNGVkFthx/BOCTrinco.jpg',
-    year: '2019',
-  },
-  {
-    id: 6,
-    title: 'Renovation of Ceylon College of Physicians Building',
+    title: 'Rennovation / Modification of Bank of Ceylon Holiday Home at Kandy',
     status: 'Completed',
     image:
-        'https://uploadthingy.s3.us-west-1.amazonaws.com/dEugyLFXt8p15EwMhocS21/ccp.jpg',
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/enBqd157KWkKnPSn9fenmu/BOCKandy10.jpg',
     year: '2020',
   },
   {
-    id: 7,
-    title: 'Colombo Urban Regeneration Project, Sri Lanka',
-    status: 'Completed',
+    id: 6,
+    title: 'Building for Bank of Ceylon City Branch at Trincomalee',
+    status: 'Ongoing',
     image:
-        'https://uploadthingy.s3.us-west-1.amazonaws.com/4Ue86DSuSWufzgS5LxtZow/ColomboUrbanRegeneration.jpg',
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/uUTu3EvNS4hoGtNGVkFthx/BOCTrinco.jpg',
     year: '2019',
   },
   {
-    id: 8,
-    title:
-        'Fuel Station for Sri Lanka Transport Board at Baseline Road, Orugodawatta',
+    id: 7,
+    title: 'Renovation of Ceylon College of Physicians Building',
     status: 'Completed',
     image:
-        'https://uploadthingy.s3.us-west-1.amazonaws.com/xeAekRncX8k6uBpNM6E238/CTBFuel.jpg',
-    year: '2018',
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/dEugyLFXt8p15EwMhocS21/ccp.jpg',
+    year: '2020',
+  },
+  {
+    id: 8,
+    title: 'Colombo Urban Regeneration Project, Sri Lanka',
+    status: 'Completed',
+    image:
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/4Ue86DSuSWufzgS5LxtZow/ColomboUrbanRegeneration.jpg',
+    year: '2019',
   },
   {
     id: 9,
-    title: 'Residence for Dr. Ranil Sanjeewa and Dr. Gayathri Kanchana',
+    title:
+      'Fuel Station for Sri Lanka Transport Board at Baseline Road, Orugodawatta',
     status: 'Completed',
     image:
-        'https://uploadthingy.s3.us-west-1.amazonaws.com/kmmeY1hETXwTE6XTqShp1R/Sanjeewa.jpg',
-    year: '2020 to 2021',
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/xeAekRncX8k6uBpNM6E238/CTBFuel.jpg',
+    year: '2018',
   },
   {
     id: 10,
-    title: 'Widening and Improvements to Galle-udugama Road',
+    title: 'Residence for Dr. Ranil Sanjeewa and Dr. Gayathri Kanchana',
     status: 'Completed',
     image:
-        'https://uploadthingy.s3.us-west-1.amazonaws.com/oqErTLCAXbkm2fjSjKNjw8/GalleUdugama2.jpg',
-    year: '2014 to 2015',
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/kmmeY1hETXwTE6XTqShp1R/Sanjeewa.jpg',
+    year: '2020 to 2021',
   },
   {
     id: 11,
-    title:
-        'Factory & Office Building for Ideal Motors (Pvt) Ltd., Mount Lavinia',
+    title: 'Widening and Improvements to Galle-udugama Road',
     status: 'Completed',
     image:
-        'https://uploadthingy.s3.us-west-1.amazonaws.com/tx2EwoYUkr9EegzxVYHzH6/IdeaalMotors8.jpg',
-    year: '2018 to 2020',
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/oqErTLCAXbkm2fjSjKNjw8/GalleUdugama2.jpg',
+    year: '2014 to 2015',
   },
   {
     id: 12,
     title:
-        'Infrastructure for Modern Research & Development Building at Malabe',
+      'Factory & Office Building for Ideal Motors (Pvt) Ltd., Mount Lavinia',
     status: 'Completed',
     image:
-        'https://uploadthingy.s3.us-west-1.amazonaws.com/wJg6aWAMp7RUE2pC1oB1t9/1.jpg',
-    year: '2018 to 2019',
-  },
-  {
-    id: 13,
-    title: 'Residential Development at Kinsey Road, Borella',
-    status: 'Completed',
-    image:
-        'https://uploadthingy.s3.us-west-1.amazonaws.com/hPp8yHRLhaj9fgPRzWrjTr/1.jpg',
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/tx2EwoYUkr9EegzxVYHzH6/IdeaalMotors8.jpg',
     year: '2018 to 2020',
   },
   {
-    id: 14,
+    id: 13,
     title:
-        'Implementation of Landslide Ground Subsidence Rectification in Uva Provincial Roads',
-    status: 'Ongoing',
+      'Infrastructure for Modern Research & Development Building at Malabe',
+    status: 'Completed',
     image:
-        'https://uploadthingy.s3.us-west-1.amazonaws.com/cioTkdxUUeGFUCCZ7QUuCG/crip.jpg',
-    year: '2018',
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/wJg6aWAMp7RUE2pC1oB1t9/1.jpg',
+    year: '2018 to 2019',
+  },
+  {
+    id: 14,
+    title: 'Residential Development at Kinsey Road, Borella',
+    status: 'Completed',
+    image:
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/hPp8yHRLhaj9fgPRzWrjTr/1.jpg',
+    year: '2018 to 2020',
   },
   {
     id: 15,
     title:
-        'Reduction of Landslide Vulnerability by Mitigation Measures Project',
-    status: 'Completed',
+      'Implementation of Landslide Ground Subsidence Rectification in Uva Provincial Roads',
+    status: 'Ongoing',
     image:
-        'https://uploadthingy.s3.us-west-1.amazonaws.com/fafkRQFLeBREsDwj6G6ML6/1.jpg',
-    year: '2019',
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/cioTkdxUUeGFUCCZ7QUuCG/crip.jpg',
+    year: '2018',
   },
   {
     id: 16,
     title:
-        'Refurbishment of Emergency Entrance & Ground Floor at Lanka Hospitals',
+      'Reduction of Landslide Vulnerability by Mitigation Measures Project',
     status: 'Completed',
     image:
-        'https://uploadthingy.s3.us-west-1.amazonaws.com/5FsM68FBiiym385Q23zaPu/1.jpg',
-    year: '2018',
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/fafkRQFLeBREsDwj6G6ML6/1.jpg',
+    year: '2019',
   },
   {
     id: 17,
     title:
-        'Widening and Improvement of Manampitiya Aralaganwila, Maduruoya Road',
+      'Refurbishment of Emergency Entrance & Ground Floor at Lanka Hospitals',
     status: 'Completed',
     image:
-        'https://uploadthingy.s3.us-west-1.amazonaws.com/uoexXmqGXtYzeERRUncXaV/Aralaganwila.jpg',
-    year: '2017 to 2019',
-  },
-  {
-    id: 18,
-    title: 'Factory Building for Star Garment (Passive House Concept)',
-    status: 'Completed',
-    image:
-        'https://uploadthingy.s3.us-west-1.amazonaws.com/93y55ZjiTwGga4QQBNd87A/2.jpg',
-    year: '2016 to 2017',
-  },
-  {
-    id: 19,
-    title: 'Apartment Building for Dr. V. Swarnakumar at Wellawatte, Sri Lanka',
-    status: 'Ongoing',
-    image:
-        'https://uploadthingy.s3.us-west-1.amazonaws.com/vBsgJ5pQCNhaBiVJraWSpC/_09_0096.jpg',
-    year: '2019',
-  },
-  {
-    id: 20,
-    title: "Refurbishment of Thai Ambassador's Residence at Colombo, Sri Lanka",
-    status: 'Completed',
-    image:
-        'https://uploadthingy.s3.us-west-1.amazonaws.com/tF51A9bDcyp3Bt2mTepQi1/thai1.jpg',
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/5FsM68FBiiym385Q23zaPu/1.jpg',
     year: '2018',
   },
   {
-    id: 21,
+    id: 18,
     title:
-        'Toll Facilities for Outer Circular Highway Ns-1, Kaduwela to Kadawatha',
+      'Widening and Improvement of Manampitiya Aralaganwila, Maduruoya Road',
     status: 'Completed',
     image:
-        'https://uploadthingy.s3.us-west-1.amazonaws.com/2ET9D13gyZJx7464qJjf1D/Kaduwela-TOll.jpg',
-    year: '2014 to 2015',
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/uoexXmqGXtYzeERRUncXaV/Aralaganwila.jpg',
+    year: '2017 to 2019',
+  },
+  {
+    id: 19,
+    title: 'Factory Building for Star Garment (Passive House Concept)',
+    status: 'Completed',
+    image:
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/93y55ZjiTwGga4QQBNd87A/2.jpg',
+    year: '2016 to 2017',
+  },
+  {
+    id: 20,
+    title: 'Apartment Building for Dr. V. Swarnakumar at Wellawatte, Sri Lanka',
+    status: 'Ongoing',
+    image:
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/vBsgJ5pQCNhaBiVJraWSpC/_09_0096.jpg',
+    year: '2019',
+  },
+  {
+    id: 21,
+    title: "Refurbishment of Thai Ambassador's Residence at Colombo, Sri Lanka",
+    status: 'Completed',
+    image:
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/tF51A9bDcyp3Bt2mTepQi1/thai1.jpg',
+    year: '2018',
   },
   {
     id: 22,
     title:
-        'Toll Facilities for Central Expressway Project Section Ii, Mirigama to Kurunegala',
-    status: 'Ongoing',
+      'Toll Facilities for Outer Circular Highway Ns-1, Kaduwela to Kadawatha',
+    status: 'Completed',
     image:
-        'https://uploadthingy.s3.us-west-1.amazonaws.com/uoJsFF8F4o33B1o6xMFNhD/CEP3.jpg',
-    year: '2018',
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/2ET9D13gyZJx7464qJjf1D/Kaduwela-TOll.jpg',
+    year: '2014 to 2015',
   },
   {
     id: 23,
-    title: 'Waskaduwa Meditation Centre Waskaduwa, Sri Lanka',
-    status: 'Completed',
+    title:
+      'Toll Facilities for Central Expressway Project Section Ii, Mirigama to Kurunegala',
+    status: 'Ongoing',
     image:
-        'https://uploadthingy.s3.us-west-1.amazonaws.com/qDtuy1XHuo5hUZNvM9w6pW/0.jpg',
-    year: '2018 to 2020',
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/uoJsFF8F4o33B1o6xMFNhD/CEP3.jpg',
+    year: '2018',
   },
   {
     id: 24,
-    title: 'Waterstone Resort Project Ella, Sri Lanka',
+    title: 'Waskaduwa Meditation Centre Waskaduwa, Sri Lanka',
     status: 'Completed',
     image:
-        'https://uploadthingy.s3.us-west-1.amazonaws.com/fg8AfoKaUukugz6d3rtqk1/0.jpg',
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/qDtuy1XHuo5hUZNvM9w6pW/0.jpg',
     year: '2018 to 2020',
   },
   {
     id: 25,
+    title: 'Waterstone Resort Project Ella, Sri Lanka',
+    status: 'Completed',
+    image:
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/fg8AfoKaUukugz6d3rtqk1/0.jpg',
+    year: '2018 to 2020',
+  },
+  {
+    id: 26,
     title: 'Widening and Improvements to Weligatte-bundala-kirinda Road',
     status: 'Completed',
     image:
-        'https://uploadthingy.s3.us-west-1.amazonaws.com/cLNo4fqTWWdZJ1nCqxmu9B/1.jpg',
+      'https://uploadthingy.s3.us-west-1.amazonaws.com/cLNo4fqTWWdZJ1nCqxmu9B/1.jpg',
     year: '2014 to 2015',
   },
 ]
