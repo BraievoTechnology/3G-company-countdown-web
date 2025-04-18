@@ -14,6 +14,7 @@ const HeroSection = () => {
     }
   }
   return (
+
     <section className="relative bg-black text-white overflow-hidden h-screen">
       <BackgroundGradient />
       <div
