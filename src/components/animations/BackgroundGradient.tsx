@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 const BackgroundGradient = () => {
   return <motion.div className="absolute inset-0 z-0" initial={{
