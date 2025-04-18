@@ -186,7 +186,7 @@ const ProjectCard = ({ project }: { project: (typeof projects)[0] }) => {
               {content.description}
             </motion.p>
             <motion.div className="flex items-center text-yellow-400 font-semibold group/link">
-              <Link
+              {/*<Link
                 to={project.link}
                 className="flex items-center hover:text-yellow-300"
               >
@@ -195,7 +195,7 @@ const ProjectCard = ({ project }: { project: (typeof projects)[0] }) => {
                   size={20}
                   className="ml-2 transform transition-transform duration-300 group-hover/link:translate-x-1"
                 />
-              </Link>
+              </Link>*/}
             </motion.div>
           </motion.div>
         </AnimatePresence>
