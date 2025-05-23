@@ -13,6 +13,7 @@ import CareersPage from './pages/CareersPage';
 import JobApplicationPage from './pages/JobApplicationPage';
 import ScrollToTop from './components/utils/ScrollToTop';
 export function App() {
+
   return <Router>
     <ScrollToTop />
     <div className="flex flex-col min-h-screen bg-gray-50">
