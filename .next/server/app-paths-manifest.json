@@ -1,0 +1,11 @@
+{
+  "/admin/page": "app/admin/page.js",
+  "/admin/secure/pages/GenerateDocument/page": "app/admin/secure/pages/GenerateDocument/page.js",
+  "/admin/secure/pages/dashboard/page": "app/admin/secure/pages/dashboard/page.js",
+  "/admin/secure/pages/job-applications/page": "app/admin/secure/pages/job-applications/page.js",
+  "/admin/secure/pages/job-opportunities/page": "app/admin/secure/pages/job-opportunities/page.js",
+  "/admin/secure/pages/news-feed/page": "app/admin/secure/pages/news-feed/page.js",
+  "/admin/secure/pages/projects/page": "app/admin/secure/pages/projects/page.js",
+  "/api/user/signIn/route": "app/api/user/signIn/route.js",
+  "/page": "app/page.js"
+}
