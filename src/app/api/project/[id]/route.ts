@@ -111,7 +111,7 @@ export async function PUT(req: NextRequest) {
 
         const project_name = formData.get('project_name') as string;
         const location = formData.get('location') as string;
-        const start_date = formData.get('start_date') as string;
+        const start_date = formData.get('start_date') as string | null;
         const end_date = formData.get('end_date') as string;
         const budget = formData.get('budget') as string;
         const status = formData.get('status') as string;
