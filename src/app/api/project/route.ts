@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
         const start_date = formData.get('start_date') as string | null;
         const end_date = formData.get('end_date') as string | null;
         const budget = formData.get('budget') as string | null;
-        console.log("project budget backend",budget);
+        console.log("project end date backend",end_date,"start date",start_date);
         const status = formData.get('status') as string;
         const description = formData.get('description') as string | null;
         const category = formData.get('category') as string;

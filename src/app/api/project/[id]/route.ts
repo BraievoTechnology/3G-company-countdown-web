@@ -105,18 +105,21 @@ export async function PUT(req: NextRequest) {
     if (!id) {
         return NextResponse.json({ message: 'Invalid or missing ID' }, { status: 400 });
     }
-
+    console.log("project end date backend update  id",id);
     try {
         const formData = await req.formData();
 
         const project_name = formData.get('project_name') as string;
         const location = formData.get('location') as string;
-        const start_date = formData.get('start_date') as string;
-        const end_date = formData.get('end_date') as string;
+        const start_date = formData.get('start_date') as string | null;
+        const end_date = formData.get('end_date') as string | null;
         const budget = formData.get('budget') as string;
+        console.log("project end date backend",end_date,"start date",start_date);
         const status = formData.get('status') as string;
         const description = formData.get('description') as string;
         const category = formData.get('category') as string;
+
+
 
         const files = formData.getAll('images');
         const validFiles = files.filter(file => typeof file === 'object' && 'arrayBuffer' in file);

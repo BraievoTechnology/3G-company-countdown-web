@@ -102,10 +102,10 @@ const Projects: React.FC = () => {
             project_name: data.name,
             description: data.description,
             location: data.location,
-            start_date: new Date(data.startDate),
-            end_date: new Date(data.endDate),
+            start_date: data.startDate,
+            end_date: data.endDate,
             status: data.status,
-            budget: parseFloat(data.budget),
+            budget: data.budget,
             category: data.category,
             images: data.images,
         };
