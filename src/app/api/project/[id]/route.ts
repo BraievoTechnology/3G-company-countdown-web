@@ -103,13 +103,6 @@ export async function PUT(req: NextRequest) {
 
 
 
-
-
-
-
-
-
-
 function extractBlobNameFromUrl(url: string): string {
     const parts = url.split('/');
     return parts[parts.length - 1];
