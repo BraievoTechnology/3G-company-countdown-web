@@ -62,7 +62,7 @@ export async function POST(req: NextRequest) {
                 new Paragraph({ text: `Description: ${project.description}` }),
             );
 
-            for (const image of project.images) {
+           /* for (const image of project.images) {
                 const imagePath = path.join(process.cwd(), 'public', image.image_name);
                 try {
                     const imageBuffer = readFileSync(imagePath);
@@ -74,7 +74,7 @@ export async function POST(req: NextRequest) {
                     console.error(`Image not found: ${image.image_name}`, err);
                     children.push(new Paragraph({ text: `Image not found: ${image.image_name}` }));
                 }
-            }
+            }*/
 
             children.push(new Paragraph({ text: '------------------------------------------' }));
         }
