@@ -128,9 +128,10 @@ const JobApplications: React.FC = () => {
       header: "Expected Salary",
       width: "20%",
       render: (value: number | null) => (
-        <div className="text-sm text-gray-600">
-          {value ? `LKR ${value}` : "Not specified"}
-        </div>
+          <div className="text-sm text-gray-600">
+            {value ? `LKR ${value}` : "Not specified"}
+          </div>
+ 
       ),
     },
     {
