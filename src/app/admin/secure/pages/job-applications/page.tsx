@@ -13,13 +13,16 @@ import { DataTable } from "@/app/admin/secure/components/UI/DataTable";
 import { Modal } from "@/app/admin/secure/components/UI/Modal";
 import { ApplicationDetailsModal } from "@/app/admin/secure/components/Applications/ApplicationDetailsModal";
 import { PageTransition } from "../../components/UI/PageTransition";
-import {toast} from "sonner";
+import { toast } from "sonner";
 
 const JobApplications: React.FC = () => {
   const [applications, setApplications] = useState<JobApplication[]>([]);
-  const [filteredApplications, setFilteredApplications] = useState<JobApplication[]>([]);
+  const [filteredApplications, setFilteredApplications] = useState<
+    JobApplication[]
+  >([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedApplication, setSelectedApplication] = useState<JobApplication | null>(null);
+  const [selectedApplication, setSelectedApplication] =
+    useState<JobApplication | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [, setIsLoading] = useState(true);
 
@@ -48,16 +51,19 @@ const JobApplications: React.FC = () => {
     const filtered = applications.filter((app) => {
       const searchString = searchTerm.toLowerCase();
       return (
-          (app.name?.toLowerCase() || "").includes(searchString) ||
-          (app.email?.toLowerCase() || "").includes(searchString) ||
-          (app.experience?.toLowerCase() || "").includes(searchString) ||
-          (app.contact?.toLowerCase() || "").includes(searchString)
+        (app.name?.toLowerCase() || "").includes(searchString) ||
+        (app.email?.toLowerCase() || "").includes(searchString) ||
+        (app.experience?.toLowerCase() || "").includes(searchString) ||
+        (app.contact?.toLowerCase() || "").includes(searchString)
       );
     });
     setFilteredApplications(filtered);
   }, [searchTerm, applications]);
 
-  const handleUpdateApplication = async (id: number, data: Partial<JobApplication>) => {
+  const handleUpdateApplication = async (
+    id: number,
+    data: Partial<JobApplication>
+  ) => {
     try {
       await jobApplicationService.updateApplication(id, data);
       await fetchApplications();
@@ -68,21 +74,21 @@ const JobApplications: React.FC = () => {
 
   const handleDelete = async (id: number, name: string) => {
     const result = await Swal.fire({
-      title: 'Are you sure?',
+      title: "Are you sure?",
       text: `Do you really want to delete "${name}"?`,
-      icon: 'warning',
+      icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: '#d33',
-      cancelButtonColor: '#3085d6',
-      confirmButtonText: 'Yes, delete it!',
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Yes, delete it!",
     });
 
     if (result.isConfirmed) {
       const deletePromise = jobApplicationService.deleteApplication(id, {});
       toast.promise(deletePromise, {
-        loading: 'Deleting job application...',
-        success: 'Job application deleted!',
-        error: 'Failed to delete job application. Please try again.',
+        loading: "Deleting job application...",
+        success: "Job application deleted!",
+        error: "Failed to delete job application. Please try again.",
       });
 
       try {
@@ -100,13 +106,13 @@ const JobApplications: React.FC = () => {
       header: "Candidate",
       width: "30%",
       render: (value: string, row: JobApplication) => (
-          <div>
-            <div className="font-medium text-gray-900 flex items-center">
-              <UserIcon size={16} className="mr-2 text-gray-400" />
-              {value}
-            </div>
-            <div className="text-sm text-gray-500 mt-1">{row.email}</div>
+        <div>
+          <div className="font-medium text-gray-900 flex items-center">
+            <UserIcon size={16} className="mr-2 text-gray-400" />
+            {value}
           </div>
+          <div className="text-sm text-gray-500 mt-1">{row.email}</div>
+        </div>
       ),
     },
     {
@@ -114,7 +120,7 @@ const JobApplications: React.FC = () => {
       header: "Experience",
       width: "20%",
       render: (value: string | null) => (
-          <div className="text-sm text-gray-600">{value || "Not specified"}</div>
+        <div className="text-sm text-gray-600">{value || "Not specified"}</div>
       ),
     },
     {
@@ -125,6 +131,7 @@ const JobApplications: React.FC = () => {
           <div className="text-sm text-gray-600">
             {value ? `LKR ${value}` : "Not specified"}
           </div>
+ 
       ),
     },
     {
@@ -132,62 +139,63 @@ const JobApplications: React.FC = () => {
       header: "Actions",
       width: "10%",
       render: (_: any, row: JobApplication) => (
-          <button
-              onClick={(e) => {
-                e.stopPropagation();
-                handleDelete(row.id, row.name);
-              }}
-              className="text-red-600 hover:text-red-800 transition"
-              title="Delete Application"
-          >
-            <TrashIcon size={18} />
-          </button>
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            handleDelete(row.id, row.name);
+          }}
+          className="text-red-600 hover:text-red-800 transition"
+          title="Delete Application"
+        >
+          <TrashIcon size={18} />
+        </button>
       ),
     },
   ];
 
   return (
-      <PageTransition>
-        <div className="px-4 py-6 md:px-6 lg:px-8">
-          <div className="mb-6">
-            <h2 className="text-xl font-medium">Job Applications</h2>
-            <p className="text-sm text-gray-500 mt-1">
-              Manage and track all job applications
-            </p>
-          </div>
-
-          <DataTable
-              columns={columns}
-              data={filteredApplications}
-              searchPlaceholder="Search applications..."
-              onSearch={setSearchTerm}
-              onRowClick={(row) => {
-                setSelectedApplication(row);
-                setIsModalOpen(true);
-              }}
-          />
-
-          {selectedApplication && (
-              <Modal
-                  isOpen={isModalOpen}
-                  onClose={() => {
-                    setIsModalOpen(false);
-                    setSelectedApplication(null);
-                  }}
-                  title="Application Details"
-              >
-                <ApplicationDetailsModal
-                    application={selectedApplication}
-                    onUpdate={handleUpdateApplication}
-                />
-              </Modal>
-          )}
-
-          <div className="mt-4 text-sm text-gray-500">
-            Showing {filteredApplications.length} of {applications.length} applications
-          </div>
+    <PageTransition>
+      <div className="px-4 py-6 md:px-6 lg:px-8">
+        <div className="mb-6">
+          <h2 className="text-xl font-medium">Job Applications</h2>
+          <p className="text-sm text-gray-500 mt-1">
+            Manage and track all job applications
+          </p>
         </div>
-      </PageTransition>
+
+        <DataTable
+          columns={columns}
+          data={filteredApplications}
+          searchPlaceholder="Search applications..."
+          onSearch={setSearchTerm}
+          onRowClick={(row) => {
+            setSelectedApplication(row);
+            setIsModalOpen(true);
+          }}
+        />
+
+        {selectedApplication && (
+          <Modal
+            isOpen={isModalOpen}
+            onClose={() => {
+              setIsModalOpen(false);
+              setSelectedApplication(null);
+            }}
+            title="Application Details"
+          >
+            <ApplicationDetailsModal
+              application={selectedApplication}
+              onUpdate={handleUpdateApplication}
+            />
+          </Modal>
+        )}
+
+        <div className="mt-4 text-sm text-gray-500">
+          Showing {filteredApplications.length} of {applications.length}{" "}
+          applications
+        </div>
+      </div>
+    </PageTransition>
   );
 };
 

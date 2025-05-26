@@ -71,9 +71,9 @@ const HeroSection = () => {
               <div className="relative inline-block px-4 py-2">
                 <div className="absolute top-0 left-0 w-5 h-5 border-t-4 border-l-4 border-[#ffbe00]"></div>
                 <div className="absolute bottom-0 right-0 w-5 h-5 border-b-4 border-r-4 border-white"></div>
-                <div className="flex items-center space-x-2">
-                  <span className="text-3xl font-bold text-white">We</span>
-                  <div className="relative w-[120px] h-[40px] overflow-hidden">
+                <div className="flex items-center space-x-1">
+                  <span className="text-[55px] font-bold text-white">We</span>
+                  <div className="relative w-[250px] h-[85px] overflow-hidden">
                     <AnimatePresence mode="wait">
                       <motion.span
                         key={words[currentWordIndex]}
@@ -86,7 +86,7 @@ const HeroSection = () => {
                           stiffness: 300,
                           damping: 30,
                         }}
-                        className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-3xl text-[#ffbe00]"
+                        className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-[55px] text-[#ffbe00]"
                       >
                         {words[currentWordIndex]}
                       </motion.span>
@@ -97,7 +97,7 @@ const HeroSection = () => {
             </div>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#ffbe00] leading-tight md:leading-snug lg:leading-normal">
+            <h1 className="text-[44px] font-bold mb-2 mt-2 text-[#ffbe00] leading-tight md:leading-snug lg:leading-normal">
               Engineering Excellence for Tomorrow's World
             </h1>
           </FadeIn>

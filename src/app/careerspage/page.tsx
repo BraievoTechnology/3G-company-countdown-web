@@ -247,8 +247,8 @@ const CareersPage = () => {
                 </motion.div>
               ))}
               {filteredJobs.length === 0 && !loading && (
-                <div className="text-center text-white py-8">
-                  <p>No open positions match your criteria.</p>
+                <div className="text-center text-[#ffbe00] py-8">
+                  <p>No open positions match your criteria</p>
                 </div>
               )}
             </div>
