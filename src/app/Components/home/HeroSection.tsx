@@ -72,7 +72,7 @@ const HeroSection = () => {
                 <div className="absolute top-0 left-0 w-5 h-5 border-t-4 border-l-4 border-[#ffbe00]"></div>
                 <div className="absolute bottom-0 right-0 w-5 h-5 border-b-4 border-r-4 border-white"></div>
                 <div className="flex items-center space-x-1">
-                  <span className="text-[60px] font-bold text-white">We</span>
+                  <span className="text-[55px] font-bold text-white">We</span>
                   <div className="relative w-[250px] h-[85px] overflow-hidden">
                     <AnimatePresence mode="wait">
                       <motion.span
@@ -86,7 +86,7 @@ const HeroSection = () => {
                           stiffness: 300,
                           damping: 30,
                         }}
-                        className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-[60px] text-[#ffbe00]"
+                        className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-[55px] text-[#ffbe00]"
                       >
                         {words[currentWordIndex]}
                       </motion.span>
