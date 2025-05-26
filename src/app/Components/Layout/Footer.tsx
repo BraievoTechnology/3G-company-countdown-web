@@ -267,24 +267,24 @@ const Footer = () => {
       <div className="relative border-t border-[#ffbe00]">
         <div className="container mx-auto px-4 py-6">
           <motion.div
-            initial={{
-              opacity: 0,
-            }}
-            whileInView={{
-              opacity: 1,
-            }}
-            viewport={{
-              once: true,
-            }}
-            transition={{
-              duration: 0.5,
-            }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
             className="flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm"
           >
-            <p>
+            <p className="text-center md:text-left">
               © {new Date().getFullYear()} 3G Consultants (Pvt) Ltd. All rights
               reserved.
             </p>
+            <a
+              href="https://www.braievo.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-right text-sm text-gray-500 hover:text-[#ffbe00] transition-colors mt-2 md:mt-0"
+            >
+              Developed by BraiEvo Technologies
+            </a>
           </motion.div>
         </div>
       </div>
