@@ -1,5 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { Document, Packer, Paragraph, Media } from 'docx';
+import {
+    Document,
+    Packer,
+    Paragraph,
+    TextRun,
+    ExternalHyperlink,
+} from 'docx';
 import { uploadToAzureBlob } from '@/app/api/util/blobService';
 
 interface ProjectImage {
@@ -13,7 +19,7 @@ interface Project {
     project_name: string;
     location: string;
     start_date: string;
-    end_date: string;
+    end_date: string | null;
     budget: string;
     status: string;
     description: string;
@@ -23,18 +29,13 @@ interface Project {
 
 function generateFileName(): string {
     const now = new Date();
-    const timestamp = now
-        .toISOString()
-        .replace(/[-:T.]/g, '')
-        .slice(0, 14);
+    const timestamp = now.toISOString().replace(/[-:T.]/g, '').slice(0, 14);
     return `projects-${timestamp}.docx`;
 }
 
 export async function POST(req: NextRequest) {
     try {
         const body = await req.json();
-        console.log("Incoming body:", body);
-
         const projects: Project[] = Array.isArray(body) ? body : body.projects;
 
         if (!Array.isArray(projects)) {
@@ -43,41 +44,62 @@ export async function POST(req: NextRequest) {
 
         const doc = new Document({
             sections: [],
-            creator: 'Next.js App',
-            title: 'Project Report',
-            description: 'Generated project report with images',
+            styles: {
+                paragraphStyles: [
+                    {
+                        id: 'Hyperlink',
+                        name: 'Hyperlink',
+                        basedOn: 'Normal',
+                        next: 'Normal',
+                        run: {
+                            color: '#0000FF',
+                            underline: {
+                                type: 'single',
+                            },
+                        },
+                    },
+                ],
+            }
         });
 
         const children: Paragraph[] = [];
 
         for (const project of projects) {
+            const startYear = new Date(project.start_date).getFullYear();
+            const endYear = project.end_date ? new Date(project.end_date).getFullYear() : 'Ongoing';
+
             children.push(
                 new Paragraph({ text: `Project Name: ${project.project_name}`, heading: 'Heading1' }),
                 new Paragraph({ text: `Location: ${project.location}` }),
-                new Paragraph({ text: `Start Date: ${new Date(project.start_date).toLocaleDateString()}` }),
-                new Paragraph({ text: `End Date: ${new Date(project.end_date).toLocaleDateString()}` }),
+                new Paragraph({ text: `Start Year: ${startYear}` }),
+                new Paragraph({ text: `End Year: ${endYear}` }),
                 new Paragraph({ text: `Budget: ${project.budget}` }),
                 new Paragraph({ text: `Status: ${project.status}` }),
                 new Paragraph({ text: `Category: ${project.category}` }),
                 new Paragraph({ text: `Description: ${project.description}` }),
             );
 
-           /* for (const image of project.images) {
-                const imagePath = path.join(process.cwd(), 'public', image.image_name);
-                try {
-                    const imageBuffer = readFileSync(imagePath);
-
-                    // Show image with fixed width and height
-                    const imageDoc = Media.addImage(doc, imageBuffer, 400, 300); // width x height in pixels
-                    children.push(new Paragraph(imageDoc));
-                } catch (err) {
-                    console.error(`Image not found: ${image.image_name}`, err);
-                    children.push(new Paragraph({ text: `Image not found: ${image.image_name}` }));
-                }
-            }*/
+            const imagesToShow = project.images.slice(0, 8);
+            for (const image of imagesToShow) {
+                const imageUrl = image.image_name;
+                const link = new ExternalHyperlink({
+                    children: [
+                        new TextRun({
+                            text: 'Click to View Image',
+                            color: '#0000FF',
+                            underline: {
+                                type: 'single',
+                            },
+                        }),
+                    ],
+                    link: imageUrl,
+                });
+                children.push(new Paragraph({ children: [link] }));
+            }
 
             children.push(new Paragraph({ text: '------------------------------------------' }));
         }
+
 
         doc.addSection({ children });
 
@@ -89,7 +111,6 @@ export async function POST(req: NextRequest) {
         const blobUrl = await uploadToAzureBlob(buffer, fileName, mimeType);
 
         return NextResponse.json({ message: 'Document generated', filePath: blobUrl }, { status: 200 });
-
     } catch (error) {
         console.error('Error generating document:', error);
         return NextResponse.json({ message: 'Failed to generate document' }, { status: 500 });

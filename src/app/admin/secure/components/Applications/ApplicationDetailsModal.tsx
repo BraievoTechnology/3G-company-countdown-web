@@ -84,7 +84,6 @@ export const ApplicationDetailsModal: React.FC<
                 <div className="flex items-center text-sm">
                   <PhoneIcon size={16} className="mr-2 text-gray-400" />
                   <a
-                    href={`tel:${application.contact}`}
                     className="text-blue-600 hover:underline"
                   >
                     {application.contact}
@@ -107,7 +106,7 @@ export const ApplicationDetailsModal: React.FC<
               {application.expected_salary && (
                 <div className="flex items-center text-sm">
                   <DollarSignIcon size={16} className="mr-2 text-gray-400" />
-                  <span>Expected: ${application.expected_salary}</span>
+                  <span>Expected: LKR {application.expected_salary}</span>
                 </div>
               )}
             </div>
@@ -115,17 +114,7 @@ export const ApplicationDetailsModal: React.FC<
         </div>
         <div className="space-y-4">
           <div className="space-y-2">
-            <h4 className="text-sm font-medium text-gray-500">Skills</h4>
-            <div className="flex flex-wrap gap-2">
-              {application.skills.map((skillObj) => (
-                <span
-                  key={skillObj.id}
-                  className="rounded-full bg-blue-50 px-2 py-1 text-xs text-blue-700"
-                >
-                  {skillObj.skill}
-                </span>
-              ))}
-            </div>
+
           </div>
           {application.cv_name && (
             <div className="space-y-2">

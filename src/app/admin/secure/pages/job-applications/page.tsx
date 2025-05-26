@@ -123,7 +123,7 @@ const JobApplications: React.FC = () => {
       width: "20%",
       render: (value: number | null) => (
           <div className="text-sm text-gray-600">
-            {value ? `$${value}` : "Not specified"}
+            {value ? `LKR ${value}` : "Not specified"}
           </div>
       ),
     },
