@@ -68,12 +68,17 @@ const HeroSection = () => {
         <div className="max-w-3xl mt-20">
           <FadeIn delay={0.2}>
             <div className="text-left">
-              <div className="relative inline-block px-4 py-2">
-                <div className="absolute top-0 left-0 w-5 h-5 border-t-4 border-l-4 border-[#ffbe00]"></div>
-                <div className="absolute bottom-0 right-0 w-5 h-5 border-b-4 border-r-4 border-white"></div>
-                <div className="flex items-center space-x-1">
-                  <span className="text-[55px] font-bold text-white">We</span>
-                  <div className="relative w-[250px] h-[85px] overflow-hidden">
+              <div className="relative inline-block px-2 py-1 sm:px-4 sm:py-2">
+                {/* Corner borders */}
+                <div className="absolute top-0 left-0 w-3 h-3 sm:w-5 sm:h-5 border-t-4 border-l-4 border-[#ffbe00]"></div>
+                <div className="absolute bottom-0 right-0 w-3 h-3 sm:w-5 sm:h-5 border-b-4 border-r-4 border-white"></div>
+
+                <div className="flex flex-wrap items-center gap-3 sm:gap-1">
+                  <span className="text-[55px] sm:text-[40px] md:text-[55px] font-bold text-white">
+                    We
+                  </span>
+
+                  <div className="relative w-[240px] sm:w-[200px] md:w-[250px] h-[80px] sm:h-[65px] md:h-[85px] overflow-hidden">
                     <AnimatePresence mode="wait">
                       <motion.span
                         key={words[currentWordIndex]}
@@ -86,7 +91,7 @@ const HeroSection = () => {
                           stiffness: 300,
                           damping: 30,
                         }}
-                        className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-[55px] text-[#ffbe00]"
+                        className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-[55px] sm:text-[40px] md:text-[55px] text-[#ffbe00]"
                       >
                         {words[currentWordIndex]}
                       </motion.span>
