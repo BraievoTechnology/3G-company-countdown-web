@@ -5,6 +5,8 @@ import Button from "../ui/Button";
 import BackgroundGradient from "../animations/BackgroundGradient";
 import FadeIn from "../animations/Fadeln";
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
+import landingPageImage from "../../../../public/LandingPage.jpg";
 
 const HeroSection = () => {
   const scrollToContent = () => {
@@ -29,13 +31,14 @@ const HeroSection = () => {
   return (
     <section className="relative bg-black text-white overflow-hidden h-screen">
       <BackgroundGradient />
-      <div
-        className="absolute inset-0 bg-cover bg-black mt-0 bg-center bg-no-repeat opacity-55"
-        style={{
-          backgroundImage:
-            "url('https://3gconsultantstorage.blob.core.windows.net/3g-blob/LandingPage/LandingPage.jpg')",
-        }}
-      />
+      <div className="absolute inset-0 bg-cover bg-black mt-0 bg-center bg-no-repeat opacity-55">
+        <Image
+          src={landingPageImage}
+          alt="Landing Page Background"
+          fill
+          priority
+        />
+      </div>
       <motion.div
         className="absolute inset-0"
         initial={{ opacity: 0 }}
