@@ -157,8 +157,7 @@ const services = [
       "Procurement involves making buying decisions under scarcity. Whereas, in order to secure and make the project a reality, it is vital to have a proper contract between parties. A contract is a legally binding agreement between at least two parties that defines and governs the rights and obligations of the two or many parties involved. A contract is legally enforceable since it fulfils the requirements and approval of the law. A sound Contract Administration will create a path to deliver the project to a definite success.",
     icon: <BriefcaseIcon size={48} className="text-[#ffbe00]" />,
     link: "/services/procurement",
-    image:
-      "https://uploadthingy.s3.us-west-1.amazonaws.com/rmu9AdGC9E2rcS1QUJfteR/1.jpg",
+    image: "/assets/staticimages/1.jpg",
   },
   {
     id: "highways",
@@ -167,8 +166,7 @@ const services = [
       "Sri Lanka, been a developing country that has initiated many infrastructure developments projects, mainly in urban and rural road development projects together with other supportive infrastructure development projects such as earthwork & paving, electrification, landscaping, widening, up-gradation and drainage and beyond. This has created many opportunities for our firm to demonstrate our talent in recent Highways and Transportation projects.",
     icon: <TrafficCone size={48} className="text-[#ffbe00]" />,
     link: "/services/highways",
-    image:
-      "https://uploadthingy.s3.us-west-1.amazonaws.com/4uSRqgPmWzgHjbBK4u28DW/2.jpg",
+    image: "/assets/staticimages/2.jpg",
   },
   {
     id: "water",
@@ -177,8 +175,7 @@ const services = [
       "It’s said that “Water is more precious than gold”. We at 3G Consultants (Pvt) Ltd. has always highly valued the conservation of natural resources such as water. Sustainable management of water resources has been a key concern of 3G Consultants (Pvt) Ltd. since the beginnings and has always been one of our focused areas of solution delivery thanks to the importance we have placed on Water Resource Engineering. Therefore, we always adhere and respect the international standards and regulations when it comes to water resource engineering.",
     icon: <DropletIcon size={48} className="text-[#ffbe00]" />,
     link: "/services/water",
-    image:
-      "https://uploadthingy.s3.us-west-1.amazonaws.com/7qW7tVknySk7LQaiogGRZJ/3.jpg",
+    image: "/assets/staticimages/3.jpg",
   },
   {
     id: "environmental",
@@ -187,8 +184,7 @@ const services = [
       "Sri Lanka is an island nation, exhibiting remarkable biological diversity and considered to be the richest country in the Asian region in terms of species concentration. Ecological, climatic, soil and topographical variability across the country provides favourable conditions for many types of species of flora and fauna in most localities. We at 3G Consultants (Pvt) Ltd., believe that it’s our responsibility to protect the environment and we have always cherished the idea of sustainable development and conservation of the environment.",
     icon: <LeafIcon size={48} className="text-[#ffbe00]" />,
     link: "/services/environmental",
-    image:
-      "https://uploadthingy.s3.us-west-1.amazonaws.com/paBfbAoUK3DgL22hJspd68/4.jpg",
+    image: "/assets/staticimages/4.jpg",
   },
   {
     id: "urban",
@@ -197,8 +193,7 @@ const services = [
       "With the ever-increasing population and need of enhancing living standards, there are many Urban, Rural, and Regional development projects launched to support major developments in the country. When it comes to such projects, it’s not only crucial but also timely to consider the need for future expansion. We believe that a well-planned innovative design plays a pivotal role in such urban development projects.",
     icon: <MapIcon size={48} className="text-[#ffbe00]" />,
     link: "/services/urban",
-    image:
-      "https://uploadthingy.s3.us-west-1.amazonaws.com/7Xj1Fs74eA2FTDKyEzdC1n/5.jpg",
+    image: "/assets/staticimages/5.jpg",
   },
   {
     id: "housing",
@@ -207,8 +202,7 @@ const services = [
       "It’s become a trend in most of the developing countries to imitate the western world by acquiring modern living standards with modern architectural features and latest technologies such as luxury housing developments, educational cities, IT parks, condominiums, waterfront developments, iconic buildings, luxury hotels, high rise buildings, townships, luxury Villas and more.",
     icon: <BuildingIcon size={48} className="text-[#ffbe00]" />,
     link: "/services/housing",
-    image:
-      "https://uploadthingy.s3.us-west-1.amazonaws.com/tP7WEaVdh371WvA6QJsycM/6.jpg",
+    image: "/assets/staticimages/6.jpg",
   },
 ];
 const ServicesPage = () => {
