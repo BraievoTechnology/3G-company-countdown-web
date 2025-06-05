@@ -343,7 +343,7 @@ const ServicesSection = () => {
             </div>
             <div className="flex gap-4">
               <button
-                onClick={prevSlide}
+                onClick={nextSlide}
                 className="p-2 rounded-full bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-colors"
               >
                 <ChevronRightIcon size={24} />
