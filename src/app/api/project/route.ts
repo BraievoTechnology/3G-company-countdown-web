@@ -84,6 +84,9 @@ export async function GET(req: NextRequest) {
             include: {
                 images: true,
             },
+            orderBy: {
+                id: 'desc', // 👈 Sorting by id in descending order
+            },
         });
 
         return NextResponse.json(projects);
@@ -92,3 +95,4 @@ export async function GET(req: NextRequest) {
         return NextResponse.json({ message: 'Internal Server Error' }, { status: 500 });
     }
 }
+
