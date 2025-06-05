@@ -2,6 +2,11 @@ import React from "react";
 
 import { motion } from "framer-motion";
 import Button from "@/app/Components/ui/Button";
+import img1 from "../../../../public/construction-worker.jpg";
+import img2 from "../../../../public/building-exterior.jpg";
+import img3 from "../../../../public/construction-workers.jpg";
+import img4 from "../../../../public/modern-architecture.jpg";
+
 import {
   CheckCircleIcon,
   ScaleIcon,
@@ -9,12 +14,14 @@ import {
   BuildingIcon,
   BriefcaseIcon,
 } from "lucide-react";
+import Image from "next/image";
 const AboutPreview = () => {
   const highlights = [
     "Innovative sustainable solutions",
     "Expert team of professional engineers",
     "Global project experience",
   ];
+
   const stats = [
     {
       icon: <BuildingIcon className="w-6 h-6 text-black" />,
@@ -241,69 +248,56 @@ const AboutPreview = () => {
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-4">
               <motion.div
-                className="relative overflow-hidden rounded-xl"
-                whileHover={{
-                  scale: 1.05,
-                }}
-                transition={{
-                  duration: 0.4,
-                  ease: "easeOut",
-                }}
+                className="relative overflow-hidden rounded-xl h-64"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
               >
-                <motion.img
-                  src="https://uploadthingy.s3.us-west-1.amazonaws.com/5JR5FKuNjTUuWynBLzE5vv/construction-worker.jpg"
+                <Image
+                  src={img1}
                   alt="Engineering workspace"
-                  className="rounded-xl h-64 w-full object-cover"
+                  fill
+                  className="object-cover rounded-xl"
                 />
               </motion.div>
+
               <motion.div
-                className="relative overflow-hidden rounded-xl"
-                whileHover={{
-                  scale: 1.05,
-                }}
-                transition={{
-                  duration: 0.4,
-                  ease: "easeOut",
-                }}
+                className="relative overflow-hidden rounded-xl h-40"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
               >
-                <motion.img
-                  src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                <Image
+                  src={img2}
                   alt="Building exterior"
-                  className="rounded-xl h-40 w-full object-cover"
+                  fill
+                  className="object-cover rounded-xl"
                 />
               </motion.div>
             </div>
+
             <div className="space-y-4 mt-8">
               <motion.div
-                className="relative overflow-hidden rounded-xl"
-                whileHover={{
-                  scale: 1.05,
-                }}
-                transition={{
-                  duration: 0.4,
-                  ease: "easeOut",
-                }}
+                className="relative overflow-hidden rounded-xl h-40"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
               >
-                <motion.img
-                  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                <Image
+                  src={img3}
                   alt="Construction workers"
-                  className="rounded-xl h-40 w-full object-cover"
+                  fill
+                  className="object-cover rounded-xl"
                 />
               </motion.div>
+
               <motion.div
-                className="relative overflow-hidden rounded-xl"
-                whileHover={{
-                  scale: 1.05,
-                }}
-                transition={{
-                  duration: 0.4,
-                  ease: "easeOut",
-                }}
+                className="relative overflow-hidden rounded-xl h-64"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
               >
-                <motion.img
-                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                <Image
+                  src={img4}
                   alt="Modern architecture"
-                  className="rounded-xl h-64 w-full object-cover"
+                  fill
+                  className="object-cover rounded-xl"
                 />
               </motion.div>
             </div>
