@@ -155,7 +155,7 @@ const HeroSection = () => {
             Scroll Down
           </span>
           <ChevronDownIcon
-            className="w-8 h-8 mb-15 text-white/80"
+            className="w-8 h-8 text-white/80"
             style={{
               filter: "drop-shadow(0 0 8px rgba(255,255,255,0.5))",
             }}
