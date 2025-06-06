@@ -250,7 +250,7 @@ const GenerateDocument: React.FC = () => {
                             {project.location}
                           </div>
                           <div className="text-right font-medium text-gray-900">
-                            Budget: LKR{project.budget}
+                            Budget: {project.budget}
                           </div>
                         </div>
                       </div>
