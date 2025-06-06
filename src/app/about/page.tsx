@@ -4,8 +4,10 @@ import SectionTitle from "../Components/ui/SectionTitle";
 import { EyeIcon, TargetIcon } from "lucide-react";
 import { motion } from "framer-motion";
 import WordCarousel from "../Components/animations/WorldCarousel";
-import imageOne from "../../../public/construction-workers-sunset.jpg";
-import imageTwo from "../../../public/portrait-engineers-work-hours-job-site.jpg";
+import imageOne from "../../../public/imageOne.jpg";
+import imageTwo from "../../../public/imageTwo.jpg";
+import imageThree from "../../../public/construction-workers-sunset.jpg";
+import imageFour from "../../../public/portrait-engineers-work-hours-job-site.jpg";
 import Header from "../Components/Layout/Header";
 import Footer from "../Components/Layout/Footer";
 import Image from "next/image";
@@ -17,8 +19,7 @@ const teamMembers = [
     shortBio: "(MRICS, AIQSSL, MCIArb, B.Sc. (Hons) QS, Dip. Arb)",
     fullBio:
       "Mr. Prasad Jasinghe, Co-founder and Managing Director, is a Chartered Quantity Surveyor with over 22 years of experience in project management, adjudication and arbitration, contracts, and procurement across both local and international markets. A graduate of the University of Moratuwa, he holds esteemed professional credentials including MRICS, AIQSSL, MCIArb, a B.Sc. (Hons) in Quantity Surveying, and a Diploma in Arbitration from ICLP. His leadership and expertise continue to drive the company’s sustained growth and reputation for excellence.",
-    image:
-      "https://uploadthingy.s3.us-west-1.amazonaws.com/f3k5YMid6hyvRA6kZon1Vs/prasad.jpg ",
+    image: "/assets/staticimages/prasad.jpg ",
   },
   {
     name: "Ch.QS Saman Gamage",
@@ -27,8 +28,7 @@ const teamMembers = [
       "(MRICS, AIQSSL, MCIArb, M.Sc. Commercial Law & Dispute Resolution, B.Sc. (Hons) QS, Dip. Arb)",
     fullBio:
       "Mr. Saman Gamage, Co-founder and Director of 3G Consultants, is a Chartered Quantity Surveyor with over 26 years of experience in project management, contracts, dispute resolution, and procurement across both local and international markets. A graduate of the University of Moratuwa, he holds professional credentials including MRICS, AIQSSL, MCIArb, B.Sc. (Hons) in Quantity Surveying, an M.Sc. in Construction Law & Dispute Resolution from the University of Moratuwa, and a Diploma in Arbitration from ICLP. His strategic leadership and technical expertise have been instrumental in building the firm’s strong industry presence and reputation for professional excellence.",
-    image:
-      "https://uploadthingy.s3.us-west-1.amazonaws.com/7MjpxjHuuGeQWYdNPLGo9d/saman.jpg",
+    image: "/assets/staticimages/saman.jpg",
   },
 ];
 /*const regularStaff = [
@@ -297,23 +297,23 @@ const AboutPage = () => {
                 </p>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <img
-                  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?..."
+                <Image
+                  src={imageOne}
                   alt="Construction team"
                   className="rounded-lg w-full h-48 sm:h-64 object-cover"
                 />
-                <img
-                  src="https://images.unsplash.com/photo-1485083269755-a7b559a4fe5e?..."
+                <Image
+                  src={imageTwo}
                   alt="Historical project"
                   className="rounded-lg w-full h-48 sm:h-64 object-cover"
                 />
                 <Image
-                  src={imageOne}
+                  src={imageThree}
                   alt="Historical project"
                   className="rounded-lg w-full h-48 sm:h-64 object-cover"
                 />
-                <img
-                  src="/portrait-engineers-work-hours-job-site.jpg"
+                <Image
+                  src={imageFour}
                   alt="Historical project"
                   className="rounded-lg w-full h-48 sm:h-64 object-cover"
                 />
