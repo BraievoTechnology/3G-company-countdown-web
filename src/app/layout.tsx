@@ -1,13 +1,17 @@
 import React from "react";
 import "./globals.css";
 import { Inter } from "next/font/google";
-const inter = Inter({
-  subsets: ["latin"],
-});
-export const metadata = {
+import type { Metadata } from "next";
+
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
   title: "3G Consultants | Engineering Excellence",
   description:
     "Engineering Excellence for Tomorrow's World. 3G Consultants delivers innovative engineering solutions with precision, expertise, and sustainable practices.",
+  icons: {
+    icon: "/favicon.ico",
+  },
   keywords: [
     "engineering",
     "construction",
@@ -29,6 +33,7 @@ export const metadata = {
     telephone: false,
   },
 };
+
 export default function RootLayout({
   children,
 }: {
