@@ -1,9 +1,9 @@
 import api from './api'
 export enum ProjectStatus {
-    Planning = "Planning",
-    inprogress = "inprogress", // Updated to match backend enum
-    completed = "completed",    // Updated to match backend enum
-    on_hold = "on_hold"        // Updated to match backend enum
+    Planning = 'Planning',
+    inprogress = 'inprogress', // Updated to match backend enum
+    completed = 'completed', // Updated to match backend enum
+    on_hold = 'on_hold', // Updated to match backend enum
 }
 export type ProjectCategory =
     | 'PROCUREMENT_AND_CONTRACTS'
@@ -28,6 +28,9 @@ export interface Project {
     budget: number
     category: ProjectCategory
     images: ProjectImage[]
+    nameClient?: string
+    clientContact?: string
+    inputManMonths?: number
 }
 export interface CreateProjectDTO {
     project_name: string
@@ -39,6 +42,9 @@ export interface CreateProjectDTO {
     budget: number
     category: ProjectCategory
     images: File[]
+    nameClient?: string
+    clientContact?: string
+    inputManMonths?: number
 }
 export const projectService = {
     getAllProjects: async () => {
@@ -60,6 +66,15 @@ export const projectService = {
             formData.append('status', project.status)
             formData.append('description', project.description)
             formData.append('category', project.category)
+            if (project.nameClient) {
+                formData.append('nameClient', project.nameClient)
+            }
+            if (project.clientContact) {
+                formData.append('clientContact', project.clientContact)
+            }
+            if (project.inputManMonths !== undefined) {
+                formData.append('inputManMonths', project.inputManMonths.toString())
+            }
             if (project.images) {
                 project.images.forEach((file: File) => {
                     formData.append('images', file)
@@ -87,6 +102,15 @@ export const projectService = {
             formData.append('status', project.status)
             formData.append('description', project.description)
             formData.append('category', project.category)
+            if (project.nameClient) {
+                formData.append('nameClient', project.nameClient)
+            }
+            if (project.clientContact) {
+                formData.append('clientContact', project.clientContact)
+            }
+            if (project.inputManMonths !== undefined) {
+                formData.append('inputManMonths', project.inputManMonths.toString())
+            }
             project.images.forEach((file: File) => {
                 formData.append('images', file)
             })
