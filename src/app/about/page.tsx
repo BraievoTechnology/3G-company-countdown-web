@@ -145,7 +145,7 @@ const TeamMemberCard = ({ member }: { member: (typeof teamMembers)[0] }) => {
         </div>
         <div className="p-6 text-center">
           <h3 className="text-xl font-bold text-black">{member.name}</h3>
-          <p className="text-[#ffbe00] font-medium mt-1">{member.role}</p>
+          <p className="text-black font-medium mt-1">{member.role}</p>
           <p className="text-gray-600 text-sm mt-3">{member.shortBio}</p>
         </div>
         <motion.div
@@ -222,7 +222,7 @@ const AboutPage = () => {
     <>
       <Header />
       <div className="w-full">
-        <section className="relative bg-black text-white py-24">
+        <section className="relative bg-black mt-[-105px] text-white py-34">
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50"
             style={{

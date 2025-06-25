@@ -17,9 +17,8 @@ import { jobApplicationService } from "../../services/api/jobApplicationService"
 import { Job } from "@/app/types/job";
 import Footer from "@/app/Components/Layout/Footer";
 import Header from "@/app/Components/Layout/Header";
-import Swal from 'sweetalert2';
-import {toast} from "sonner";
-
+import Swal from "sweetalert2";
+import { toast } from "sonner";
 
 interface FormData {
   firstName: string;
@@ -131,13 +130,12 @@ const JobApplicationPage = () => {
     setCurrentStep((prev) => Math.max(prev - 1, 1));
   };
 
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     // Show a loading Swal while submitting
     Swal.fire({
-      title: 'Submitting your application...',
+      title: "Submitting your application...",
       didOpen: () => {
         Swal.showLoading();
       },
@@ -162,13 +160,13 @@ const JobApplicationPage = () => {
       await jobApplicationService.createJobApplication(applicationData);
 
       Swal.close(); // Close loading modal
-      toast.success('Application submitted successfully!');
+      toast.success("Application submitted successfully!");
 
-      router.push('/careerspage');
+      router.push("/careerspage");
     } catch (error) {
       Swal.close(); // Close loading modal
-      console.error('Error submitting application:', error);
-      toast.error('Failed to submit application. Please try again.');
+      console.error("Error submitting application:", error);
+      toast.error("Failed to submit application. Please try again.");
     }
   };
 
@@ -438,21 +436,21 @@ const JobApplicationPage = () => {
     <>
       <Header />
       <div className="w-full">
-        <div className="bg-[#f1c235] py-12">
+        <div className=" mt-[-105px] py-34">
           <div className="container mx-auto px-4">
             <button
               onClick={() => router.push("/careerspage")}
-              className="text-white flex items-center hover:underline"
+              className="text-[#ffbe00] flex items-center hover:underline"
             >
               <ArrowLeftIcon className="w-4 h-4 mr-2" />
               Back to Job Listing
             </button>
-            <h1 className="text-3xl font-bold text-white mt-4">
+            <h1 className="text-3xl font-bold text-[#ffbe00] mt-4">
               Job Application
             </h1>
           </div>
         </div>
-        <div className="container mx-auto px-4 py-12">
+        <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             {/* Stepper */}
             <div className="mb-12">
@@ -465,7 +463,7 @@ const JobApplicationPage = () => {
                           currentStep > step.number
                             ? "bg-green-500 text-white"
                             : currentStep === step.number
-                            ? "bg-black text-[#f1c235]"
+                            ? "bg-black text-[#ffbe00]"
                             : "bg-gray-200 text-gray-500"
                         }`}
                         initial={{

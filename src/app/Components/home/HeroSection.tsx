@@ -29,9 +29,9 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative bg-black text-white overflow-hidden h-screen">
+    <section className="relative bg-black text-white mt-[-105px] overflow-hidden h-screen">
       <BackgroundGradient />
-      <div className="absolute inset-0 bg-cover bg-black mt-0 bg-center bg-no-repeat opacity-55">
+      <div className="absolute inset-0 bg-cover bg-black  bg-center bg-no-repeat opacity-55">
         <Image
           src={landingPageImage}
           alt="Landing Page Background"

@@ -12,6 +12,7 @@ import {
   ChevronRightIcon,
 } from "lucide-react";
 import SectionTitle from "../ui/SectionTitle";
+import Button from "../ui/Button";
 const services = [
   {
     id: "procurement",
@@ -156,8 +157,8 @@ const ServiceCard = ({ service }: { service: (typeof services)[0] }) => {
         <div className="relative h-full p-6 md:p-8 flex flex-col justify-between z-10">
           <div className="text-white h-full flex flex-col">
             <ServiceIcon>{service.icon}</ServiceIcon>
-            <div className="flex-grow flex items-start justify-center mt-[200px]">
-              <h3 className="text-xl md:text-2xl font-bold text-center text-white">
+            <div className="flex-grow flex items-start justify-center mt-[140px]">
+              <h3 className="text-3xl font-bold text-center text-white">
                 {service.title}
               </h3>
             </div>
@@ -231,7 +232,7 @@ const MobileServiceCard = ({
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/50 to-black/90" />
         <div className="relative h-full p-6 pb-28 md:pb-6 flex flex-col justify-end z-10">
           <ServiceIcon>{service.icon}</ServiceIcon>
-          <h3 className="text-2xl font-bold text-white mb-4">
+          <h3 className="text-3xl font-bold text-white mb-4">
             {service.title}
           </h3>
           <p className="text-white/90 mb-6 text-sm line-clamp-3">
@@ -292,6 +293,7 @@ const ServicesSection = () => {
         title="Our Services"
         subtitle="Explore our comprehensive range of engineering and construction solutions"
         centered={true}
+        className="mt-7"
       />
       <motion.div
         className="absolute inset-0 z-0"
@@ -326,7 +328,7 @@ const ServicesSection = () => {
           <div className="absolute bottom-8 left-0 right-0 z-30 flex justify-center items-center gap-4">
             <button
               onClick={prevSlide}
-              className="p-2 rounded-full bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-colors"
+              className="p-2 rounded-full bg-white/10 backdrop-blur-sm  text-white hover:bg-white/20 transition-colors"
             >
               <ChevronLeftIcon size={24} />
             </button>
@@ -352,12 +354,17 @@ const ServicesSection = () => {
           </div>
         </div>
       ) : (
-        <div className="relative z-10 flex flex-nowrap h-[80vh] w-full">
+        <div className="relative z-10 flex flex-nowrap h-[65vh] w-full">
           {services.map((service) => (
             <ServiceCard key={service.id} service={service} />
           ))}
         </div>
       )}
+      <div className="mt-3 text-center">
+        <Button to="/servicespage" variant="primary">
+          View All Our Services
+        </Button>
+      </div>
     </section>
   );
 };
