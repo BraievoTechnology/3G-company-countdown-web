@@ -19,25 +19,13 @@ import Swal from "sweetalert2"; // or your toast library
 
 
 
-interface ProjectFormData {
-    name: string
-    description: string
-    location: string
-    startDate: string
-    endDate: string
-    status: ProjectStatus
-    budget?: string
-    images?: { image_name: string }[]
-    category?: string
-}
-
 const Projects: React.FC = () => {
     const [projects, setProjects] = useState<ApiProject[]>([])
     const [filteredProjects, setFilteredProjects] = useState<ApiProject[]>([])
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [editingProject, setEditingProject] = useState<ApiProject | null>(null)
     const [searchTerm, setSearchTerm] = useState('')
-    const [, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(true)
     const fetchProjects = async () => {
         try {
             const data = await projectService.getAllProjects()
@@ -45,7 +33,7 @@ const Projects: React.FC = () => {
             setFilteredProjects(data)
         } catch (error) {
             console.error('Failed to fetch projects:', error)
-
+            toast.error('Failed to load projects')
         } finally {
             setIsLoading(false)
         }
@@ -65,94 +53,78 @@ const Projects: React.FC = () => {
         })
         setFilteredProjects(filtered)
     }, [searchTerm, projects])
-    const handleAddProject = async (data: ProjectFormData) => {
-        const formattedData = {
-            project_name: data.name,
-            description: data.description,
-            location: data.location,
-            start_date: data.startDate,
-            end_date: data.endDate,
-            status: data.status,
-            budget: data.budget ,
-            category: data.category,
-            images: data.images || [],
-        };
-
-        const createPromise = projectService.createProject(formattedData);
-
-        toast.promise(createPromise, {
-            loading: 'Creating project...',
-            success: 'Project created successfully!',
-            error: 'Failed to create project. Please try again.',
-        });
-
+    const handleAddProject = async (data: any) => {
         try {
-            await createPromise;
-            await fetchProjects();
-            setIsModalOpen(false);
+            const formattedData = {
+                project_name: data.name,
+                description: data.description,
+                location: data.location,
+                start_date: data.startDate,
+                end_date: data.endDate,
+                status: data.status,
+                budget: data.budget ? parseFloat(data.budget) : 0,
+                category: data.category,
+                nameClient: data.nameClient,
+                clientContact: data.clientContact,
+                inputManMonths: data.inputManMonths
+                    ? parseInt(data.inputManMonths)
+                    : undefined,
+                images: data.images || [],
+            }
+            await projectService.createProject(formattedData)
+            await fetchProjects()
+            setIsModalOpen(false)
+            toast.success('Project created successfully')
         } catch (error) {
-            console.error('Failed to create project:', error);
-            // The toast error message is already handled above
+            console.error('Failed to create project:', error)
+            toast.error('Failed to create project')
         }
-    };
-    const handleUpdate = async (data: ProjectFormData) => {
-        if (!editingProject) return;
-
-        const formattedData = {
-            project_name: data.name,
-            description: data.description,
-            location: data.location,
-            start_date: data.startDate,
-            end_date: data.endDate,
-            status: data.status,
-            budget: data.budget,
-            category: data.category,
-            images: data.images,
-        };
-
-        const updatePromise = projectService.updateProject(editingProject.id, formattedData);
-
-        toast.promise(updatePromise, {
-            loading: 'Updating project...',
-            success: 'Project updated successfully!',
-            error: 'Failed to update project. Please try again.',
-        });
-
+    }
+    const handleUpdate = async (data: any) => {
+        if (!editingProject) return
         try {
-            await updatePromise;
-            await fetchProjects();
-            setIsModalOpen(false);
-            setEditingProject(null);
+            const formattedData = {
+                project_name: data.name,
+                description: data.description,
+                location: data.location,
+                start_date: new Date(data.startDate),
+                end_date: new Date(data.endDate),
+                status: data.status,
+                budget: parseFloat(data.budget),
+                category: data.category,
+                nameClient: data.nameClient,
+                clientContact: data.clientContact,
+                inputManMonths: data.inputManMonths
+                    ? parseInt(data.inputManMonths)
+                    : undefined,
+                images: data.images,
+            }
+            await projectService.updateProject(editingProject.id, formattedData)
+            await fetchProjects()
+            setIsModalOpen(false)
+            setEditingProject(null)
+            toast.success('Project updated successfully')
         } catch (error) {
-            console.error('Failed to update project:', error);
-            // toast error is handled above
+            console.error('Failed to update project:', error)
+            toast.error('Failed to update project')
         }
-    };
-
-
+    }
     const handleDelete = async (project: ApiProject) => {
-        const result = await Swal.fire({
-            title: 'Are you sure?',
-            text: `Do you really want to delete "${project.project_name}"?`,
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#d33',
-            cancelButtonColor: '#3085d6',
-            confirmButtonText: 'Yes, delete it!',
-        });
-
-        if (result.isConfirmed) {
+        if (
+            window.confirm(
+                `Are you sure you want to delete "${project.project_name}"?`,
+            )
+        ) {
             try {
-                await projectService.deleteProject(project.id);
-                await fetchProjects();
-                toast.success('Project deleted successfully!');
+                await projectService.deleteProject(project.id)
+                await fetchProjects()
+                toast.success('Project deleted successfully')
             } catch (error) {
-                console.error('Failed to delete project:', error);
-                toast.error('Failed to delete project. Please try again.');
+                console.error('Failed to delete project:', error)
+                toast.error('Failed to delete project')
             }
         }
-    };
-
+    }
     const handleEdit = (project: ApiProject) => {
         setEditingProject(project)
         setIsModalOpen(true)
@@ -187,7 +159,6 @@ const Projects: React.FC = () => {
                     <div className="flex items-center space-x-3">
                         {row.images && row.images.length > 0 && (
                             <div className="relative h-10 w-10 flex-shrink-0">
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
                                     src={row.images[0].image_name}
                                     alt={value}
@@ -203,7 +174,7 @@ const Projects: React.FC = () => {
                         <div>
                             <div className="font-medium text-gray-900">{value}</div>
                             <div className="text-sm text-gray-500">
-                                {row.budget ? `Budget: ${row.budget}` : 'No budget set'}
+                                {row.budget ? `Budget: $${row.budget}` : 'No budget set'}
                             </div>
                         </div>
                     </div>
@@ -235,7 +206,7 @@ const Projects: React.FC = () => {
             key: 'timeline',
             header: 'Timeline',
             width: '20%',
-            render: (_: never, row: ApiProject) => (
+            render: (_: any, row: ApiProject) => (
                 <div className="space-y-1 text-sm">
                     <div className="flex items-center text-gray-600">
                         <CalendarIcon size={14} className="mr-1" />
@@ -270,71 +241,67 @@ const Projects: React.FC = () => {
         },
     ]
     return (
-        <>
-            <Toaster position="top-right" richColors />
-            <PageTransition>
-                <div className="px-4 py-6 md:px-6 lg:px-8">
-                    <div className="mb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                        <h2 className="text-xl font-medium">Project Management</h2>
-                        <AddButton
-                            label="Add Project"
-                            onClick={() => {
-                                setEditingProject(null)
-                                setIsModalOpen(true)
-                            }}
-                        />
-                    </div>
-                    <div className="space-y-4">
-                        <DataTable
-                            columns={columns}
-                            data={filteredProjects}
-                            searchPlaceholder="Search projects..."
-                            filterOptions={{
-                                label: 'Filter by status',
-                                options: [
-                                    {
-                                        label: 'Planning',
-                                        value: ProjectStatus.Planning,
-                                    },
-                                    {
-                                        label: 'In Progress',
-                                        value: ProjectStatus.inprogress,
-                                    },
-                                    {
-                                        label: 'Completed',
-                                        value: ProjectStatus.completed,
-                                    },
-                                    {
-                                        label: 'On Hold',
-                                        value: ProjectStatus.on_hold,
-                                    },
-                                ],
-                            }}
-                            onSearch={setSearchTerm}
-                            onEdit={handleEdit}
-                            onDelete={handleDelete}
-                        />
-                        <div className="text-sm text-gray-500">
-                            Showing {filteredProjects.length} of {projects.length} projects
-                        </div>
-                    </div>
-                    <Modal
-                        isOpen={isModalOpen}
-                        onClose={() => {
-                            setIsModalOpen(false)
+        <PageTransition>
+            <div className="px-4 py-6 md:px-6 lg:px-8">
+                <div className="mb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                    <h2 className="text-xl font-medium">Project Management</h2>
+                    <AddButton
+                        label="Add Project"
+                        onClick={() => {
                             setEditingProject(null)
+                            setIsModalOpen(true)
                         }}
-                        title={editingProject ? 'Edit Project' : 'Add New Project'}
-                    >
-                        <ProjectForm
-                            onSubmit={editingProject ? handleUpdate : handleAddProject}
-                            initialData={editingProject}
-                        />
-                    </Modal>
+                    />
                 </div>
-            </PageTransition>
-        </>
-
+                <div className="space-y-4">
+                    <DataTable
+                        columns={columns}
+                        data={filteredProjects}
+                        searchPlaceholder="Search projects..."
+                        filterOptions={{
+                            label: 'Filter by status',
+                            options: [
+                                {
+                                    label: 'Planning',
+                                    value: ProjectStatus.Planning,
+                                },
+                                {
+                                    label: 'In Progress',
+                                    value: ProjectStatus.inprogress,
+                                },
+                                {
+                                    label: 'Completed',
+                                    value: ProjectStatus.completed,
+                                },
+                                {
+                                    label: 'On Hold',
+                                    value: ProjectStatus.on_hold,
+                                },
+                            ],
+                        }}
+                        onSearch={setSearchTerm}
+                        onEdit={handleEdit}
+                        onDelete={handleDelete}
+                    />
+                    <div className="text-sm text-gray-500">
+                        Showing {filteredProjects.length} of {projects.length} projects
+                    </div>
+                </div>
+                <Modal
+                    isOpen={isModalOpen}
+                    onClose={() => {
+                        setIsModalOpen(false)
+                        setEditingProject(null)
+                    }}
+                    title={editingProject ? 'Edit Project' : 'Add New Project'}
+                >
+                    <ProjectForm
+                        onSubmit={editingProject ? handleUpdate : handleAddProject}
+                        initialData={editingProject}
+                    />
+                </Modal>
+            </div>
+        </PageTransition>
     )
 }
 export default Projects
