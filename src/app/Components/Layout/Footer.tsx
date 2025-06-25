@@ -13,7 +13,7 @@ import {
   SendIcon,
   ChevronRightIcon,
 } from "lucide-react";
-import BrandText from "../ui/BrandText";
+import logo from "../../../../public/logo.png";
 const Footer = () => {
   const fadeInUpVariants = {
     initial: {
@@ -67,7 +67,7 @@ const Footer = () => {
         }}
       />
       <div className="relative container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-25">
           <motion.div
             variants={fadeInUpVariants}
             initial="initial"
@@ -79,10 +79,15 @@ const Footer = () => {
               duration: 0.5,
             }}
           >
-            <h3 className="text-2xl font-bold text-black mb-6">
-              <BrandText />
+            <img
+              src={logo.src}
+              alt="3G Consultants Logo"
+              className="mb-4 w-24 h-auto"
+            />
+            <h3 className="text-2xl  font-bold text-black mb-6">
+              3G Consultants (Pvt) Ltd
             </h3>
-            <p className="text-gray-500 mb-8 leading-relaxed">
+            <p className="text-gray-500  mb-8 leading-relaxed">
               Engineering excellence through innovation and expertise. Your
               trusted partner in construction and engineering solutions.
             </p>
@@ -137,10 +142,10 @@ const Footer = () => {
               delay: 0.2,
             }}
           >
-            <h3 className="text-lg font-semibold text-black mb-6">
+            <h3 className="text-lg font-semibold text-black mb-6 mt-6 ">
               Quick Links
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-3 ">
               {[
                 { label: "Home", path: "/" },
                 { label: "About", path: "about" },
@@ -177,7 +182,7 @@ const Footer = () => {
               delay: 0.4,
             }}
           >
-            <h3 className="text-lg font-semibold text-black mb-6">
+            <h3 className="text-lg font-semibold text-black mb-6 mt-6">
               Our Services
             </h3>
 
@@ -212,7 +217,7 @@ const Footer = () => {
               delay: 0.6,
             }}
           >
-            <h3 className="text-lg font-semibold text-black mb-6">
+            <h3 className="text-lg font-semibold text-black mb-6 mt-6">
               Contact Us
             </h3>
             <ul className="space-y-4">
@@ -224,8 +229,7 @@ const Footer = () => {
               >
                 <MapPinIcon
                   size={20}
-                  className="mr-3 mt-1 flex-shrink-0 text-[#ffbe00]
-"
+                  className="mr-3 mt-1 flex-shrink-0 text-[#ffbe00]"
                 />
                 <span>
                   19/B Jeswell Pl,

@@ -48,6 +48,9 @@ const accordionData = [
       "Supply Chain Oversight & Value Assurance",
     ],
   },
+];
+
+const secondAccordionData = [
   {
     title: "Design Coordination & Construction Supervision",
     items: [
@@ -89,7 +92,7 @@ const AccordionItem = ({
   title: string;
   items: string[];
   isOpen: boolean;
-  onClick: () => void;
+  onClick?: () => void;
 }) => {
   return (
     <div className="border-b border-[#f5f5f5] last:border-b-0">
@@ -208,6 +211,9 @@ const services = [
 const ServicesPage = () => {
   const router = useRouter();
   const [openAccordion, setOpenAccordion] = useState<number | null>(0);
+  const [openSecondAccordion, setOpenSecondAccordion] = useState<number | null>(
+    0
+  );
 
   useEffect(() => {
     // Wait for router to be ready
@@ -230,7 +236,7 @@ const ServicesPage = () => {
       <Header />
       <div className="w-full">
         {/* Hero Section */}
-        <section className="relative bg-black text-white py-24">
+        <section className="relative bg-black mt-[-105px] text-white py-34">
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50"
             style={{
@@ -257,18 +263,57 @@ const ServicesPage = () => {
               className="text-white [&>div>p]:text-black"
             />
             {/* New Accordion Section */}
-            <div className="max-w-3xl mb-20 bg-[#f5f5f5] rounded-xl overflow-hidden">
-              {accordionData.map((item, index) => (
-                <AccordionItem
-                  key={index}
-                  title={item.title}
-                  items={item.items}
-                  isOpen={openAccordion === index}
-                  onClick={() =>
-                    setOpenAccordion(openAccordion === index ? null : index)
-                  }
-                />
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 mb-30">
+              <div className="w-full bg-[#f5f5f5] hover:bg-[#eaeaea] transition-colors duration-200 rounded-xl overflow-hidden">
+                {accordionData.map((item, index) => (
+                  <div
+                    key={index}
+                    className="group"
+                    onMouseEnter={() => {
+                      if (window.innerWidth >= 768) setOpenAccordion(index); // desktop hover
+                    }}
+                    onMouseLeave={() => {
+                      if (window.innerWidth >= 768) setOpenAccordion(null); // desktop hover out
+                    }}
+                  >
+                    <AccordionItem
+                      title={item.title}
+                      items={item.items}
+                      isOpen={openAccordion === index}
+                      onClick={() =>
+                        setOpenAccordion(openAccordion === index ? null : index)
+                      }
+                    />
+                  </div>
+                ))}
+              </div>
+              <div className="w-full bg-[#f5f5f5] hover:bg-[#eaeaea] transition-colors duration-200 rounded-xl overflow-hidden">
+                {secondAccordionData.map((item, index) => (
+                  <div
+                    key={index}
+                    className="group"
+                    onMouseEnter={() => {
+                      if (window.innerWidth >= 768)
+                        setOpenSecondAccordion(index);
+                    }}
+                    onMouseLeave={() => {
+                      if (window.innerWidth >= 768)
+                        setOpenSecondAccordion(null);
+                    }}
+                  >
+                    <AccordionItem
+                      title={item.title}
+                      items={item.items}
+                      isOpen={openSecondAccordion === index}
+                      onClick={() =>
+                        setOpenSecondAccordion(
+                          openSecondAccordion === index ? null : index
+                        )
+                      }
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="space-y-16">
               {services.map((service, index) => (
