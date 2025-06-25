@@ -1,13 +1,16 @@
 import React from "react";
 import "./globals.css";
 import { Inter } from "next/font/google";
+
+
 const inter = Inter({
   subsets: ["latin"],
 });
+
 export const metadata = {
   title: "3G Consultants | Engineering Excellence",
   description:
-    "Engineering Excellence for Tomorrow's World. 3G Consultants delivers innovative engineering solutions with precision, expertise, and sustainable practices.",
+      "Engineering Excellence for Tomorrow's World. 3G Consultants delivers innovative engineering solutions with precision, expertise, and sustainable practices.",
   keywords: [
     "engineering",
     "construction",
@@ -29,18 +32,22 @@ export const metadata = {
     telephone: false,
   },
 };
+
 export default function RootLayout({
-  children,
-}: {
+                                     children,
+                                   }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+      <html lang="en">
+      <head>
+        <link rel="icon" type="image/png" href="/3gLogo.png" />
+      </head>
       <body
-        className={`${inter.className} flex flex-col min-h-screen bg-gray-50`}
+          className={`${inter.className} flex flex-col min-h-screen bg-gray-50`}
       >
-        <main className="flex-grow">{children}</main>
+      <main className="flex-grow">{children}</main>
       </body>
-    </html>
+      </html>
   );
 }
