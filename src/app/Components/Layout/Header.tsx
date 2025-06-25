@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import logo from "../../../../public/logo.png";
 import { usePathname, useRouter } from "next/navigation";
 import {
   MenuIcon,
@@ -13,16 +14,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import BrandText from "@/app/Components/ui/BrandText";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [hasScrolled, setHasScrolled] = useState(false);
   usePathname();
   const router = useRouter();
-  useEffect(() => {
-    const handleScroll = () => {
-      setHasScrolled(window.scrollY > 10);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
   const handleNavClick = (sectionId: string, path: string) => {
     setIsMenuOpen(false);
     if (location.pathname === "/" && sectionId) {
@@ -166,12 +159,8 @@ const Header = () => {
           </div>
         </div>
       </motion.div>
-      <div
-        className={`${
-          hasScrolled ? "backdrop-blur-lg" : "bg-[#f5f5f5]"
-        } shadow-md transition-all duration-300`}
-      >
-        <div className="container mx-auto px-4 py-4">
+      <div className="backdrop-blur-lg shadow-md transition-all duration-300">
+        <div className="container mx-auto px-0 py-2">
           <div className="flex justify-between items-center">
             <motion.div
               whileHover={{
@@ -195,9 +184,9 @@ const Header = () => {
                 className="flex-shrink-0"
               >
                 <img
-                  src="https://uploadthingy.s3.us-west-1.amazonaws.com/pwNwsft751H7eYgyPU3Lzz/unnamed.png"
+                  src={logo.src}
                   alt="3G Consultants Logo"
-                  className="w-14 h-14 object-contain cursor-pointer"
+                  className="w-[90px] h-[90px] max-h-[90px] object-contain cursor-pointer"
                 />
               </button>
 
@@ -209,7 +198,7 @@ const Header = () => {
                     router.push("/");
                   }
                 }}
-                className="text-2xl font-bold text-[#ffbe00] relative z-10 hidden md:block"
+                className="text-4xl font-bold text-[#ffbe00] relative z-10 hidden md:block"
               >
                 <BrandText />
               </button>
@@ -221,7 +210,7 @@ const Header = () => {
                   onClick={() =>
                     handleNavClick(item.sectionId || "", item.path || "")
                   }
-                  className="text-[#ffbe00] hover:text-black font-medium cursor-pointer"
+                  className="text-[#ffbe00] hover:text-black font-medium text-2xl cursor-pointer"
                   whileHover={{
                     scale: 1.1,
                     transition: {

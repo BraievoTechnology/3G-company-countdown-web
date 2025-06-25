@@ -29,7 +29,7 @@ const NewsPage = () => {
     <>
       <Header />
       <div className="w-full">
-        <section className="relative bg-black text-white py-24">
+        <section className="relative bg-black mt-[-105px] text-white py-34">
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50"
             style={{
